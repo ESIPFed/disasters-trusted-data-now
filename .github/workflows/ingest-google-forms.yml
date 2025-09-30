@@ -1,0 +1,56 @@
+name: Ingest Google Forms Data
+
+on:
+  schedule:
+    # Run every 6 hours
+    - cron: '0 */6 * * *'
+  workflow_dispatch: # Allow manual triggering
+  push:
+    paths:
+      - 'submissions.csv'
+      - 'scripts/ingest_google_forms.py'
+
+jobs:
+  ingest-forms:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+        
+    - name: Check if submissions.csv exists
+      id: check_csv
+      run: |
+        if [ -f "submissions.csv" ]; then
+          echo "exists=true" >> $GITHUB_OUTPUT
+        else
+          echo "exists=false" >> $GITHUB_OUTPUT
+        fi
+        
+    - name: Run Google Forms ingestion
+      if: steps.check_csv.outputs.exists == 'true'
+      run: |
+        python scripts/ingest_google_forms.py submissions.csv data.json data.json
+        
+    - name: Commit and push changes
+      if: steps.check_csv.outputs.exists == 'true' && github.event_name != 'pull_request'
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add data.json
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "Update data from Google Forms submissions [skip ci]"
+          git push
+        fi
+        
+    - name: Report no CSV file
+      if: steps.check_csv.outputs.exists == 'false'
+      run: |
+        echo "No submissions.csv file found. Skipping ingestion."

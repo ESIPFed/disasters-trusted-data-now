@@ -6,7 +6,7 @@ This script checks the accessibility of URLs in the data.json file and updates
 the accessibility status and last checked timestamp.
 
 ESIP Federation Disasters Cluster Project
-Project Lead: Jeil Oh (jeoh@utexas.edu)
+Contributor: Jeil Oh (jeoh@utexas.edu)
 """
 
 import json

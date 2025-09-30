@@ -6,7 +6,7 @@ This script processes CSV exports from Google Forms and adds new resources
 to the data.json file, handling deduplication and data normalization.
 
 ESIP Federation Disasters Cluster Project
-Project Lead: Jeil Oh (jeoh@utexas.edu)
+Contributor: Jeil Oh (jeoh@utexas.edu)
 """
 
 import csv, json, sys, re, os
