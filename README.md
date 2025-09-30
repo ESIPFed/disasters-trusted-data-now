@@ -72,6 +72,7 @@ This project is open source. Please respect the individual licenses of the resou
 ## Contact
 
 **ESIP Disasters Cluster**: https://www.esipfed.org/collaboration-areas/data-help-desk-cluster-8/
+
 **Contributor**: Jeil Oh (jeoh@utexas.edu)
 
 For questions about this project or to report issues, please contact the ESIP Disasters Cluster.
