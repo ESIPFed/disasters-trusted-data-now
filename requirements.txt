@@ -1,0 +1,6 @@
+# Python dependencies for Trusted Data Now project
+# ESIP Federation Disasters Cluster Project
+# Project Lead: Jeil Oh (jeoh@utexas.edu)
+
+# HTTP requests library for accessibility checking
+requests>=2.32.0
