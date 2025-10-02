@@ -2,5 +2,5 @@
 # ESIP Federation Disasters Cluster Project
 # Project Lead: Jeil Oh (jeoh@utexas.edu)
 
-# HTTP requests library for accessibility checking
+# HTTP requests library for accessibility checking and Google Sheets
 requests>=2.32.0

@@ -7,8 +7,17 @@ on:
   workflow_dispatch: # Allow manual triggering
   push:
     paths:
-      - 'submissions.csv'
       - 'scripts/ingest_google_forms.py'
+      - 'data.json'
+
+# Note: This workflow fetches data directly from public Google Sheets.
+# 
+# Required GitHub Secrets:
+# - GOOGLE_SHEETS_ID: The ID of your Google Sheet (from the URL)
+# 
+# To set up:
+# 1. Make sure your Google Sheet is public (Anyone with the link can view)
+# 2. Add the Google Sheets ID as a GitHub secret
 
 jobs:
   ingest-forms:
@@ -23,22 +32,18 @@ jobs:
       with:
         python-version: '3.9'
         
-    - name: Check if submissions.csv exists
-      id: check_csv
+    - name: Install dependencies
       run: |
-        if [ -f "submissions.csv" ]; then
-          echo "exists=true" >> $GITHUB_OUTPUT
-        else
-          echo "exists=false" >> $GITHUB_OUTPUT
-        fi
+        pip install -r requirements.txt
         
     - name: Run Google Forms ingestion
-      if: steps.check_csv.outputs.exists == 'true'
+      env:
+        GOOGLE_SHEETS_ID: ${{ secrets.GOOGLE_SHEETS_ID }}
       run: |
-        python scripts/ingest_google_forms.py submissions.csv data.json data.json
+        python scripts/ingest_google_forms.py data.json data.json
         
     - name: Commit and push changes
-      if: steps.check_csv.outputs.exists == 'true' && github.event_name != 'pull_request'
+      if: github.event_name != 'pull_request'
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
@@ -49,8 +54,3 @@ jobs:
           git commit -m "Update data from Google Forms submissions [skip ci]"
           git push
         fi
-        
-    - name: Report no CSV file
-      if: steps.check_csv.outputs.exists == 'false'
-      run: |
-        echo "No submissions.csv file found. Skipping ingestion."

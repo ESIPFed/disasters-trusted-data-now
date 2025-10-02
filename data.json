@@ -1970,5 +1970,20 @@
     "lastChecked": "2025-10-01T03:05:28.499405+00:00",
     "accessibilityError": "HTTP 404",
     "accessibilityStatus": 404
+  },
+  {
+    "name": "U.S. Drought Monitor",
+    "description": "The U.S. Drought Monitor (USDM) is a map released every Thursday, showing where drought is and how bad it is across the U.S. and its territories.",
+    "url": "https://droughtmonitor.unl.edu/CurrentMap.aspx",
+    "organization": "University of Nebraska-Lincoln",
+    "contact": "",
+    "contributorName": "jeoh@utexas.edu",
+    "contributorEmail": "jeoh@utexas.edu",
+    "notes": "",
+    "subscription": false,
+    "researchOrOps": "Operation",
+    "public": true,
+    "active": true,
+    "type": "drought"
   }
 ]

@@ -2,7 +2,7 @@
 """
 Google Forms Data Ingest Script for Trusted Data Now
 
-This script processes CSV exports from Google Forms and adds new resources
+This script fetches data directly from Google Sheets and adds new resources
 to the data.json file, handling deduplication and data normalization.
 
 ESIP Federation Disasters Cluster Project
@@ -11,6 +11,13 @@ Contributor: Jeil Oh (jeoh@utexas.edu)
 
 import csv, json, sys, re, os
 from urllib.parse import urlsplit, urlunsplit, parse_qsl, urlencode
+from io import StringIO
+
+try:
+    import requests
+    REQUESTS_AVAILABLE = True
+except ImportError:
+    REQUESTS_AVAILABLE = False
 
 DEBUG = os.environ.get("INGEST_DEBUG") == "1"
 
@@ -87,13 +94,93 @@ ALLOWED_TYPES = {
     "flood","earthquake","wildfire","drought","hurricane","tornado","extreme-weather","other"
 }
 
+# ---------- Google Sheets functions ----------
+def fetch_google_sheets_data(sheet_id):
+    """Fetch data from public Google Sheets and return as CSV-like rows."""
+    if not REQUESTS_AVAILABLE:
+        print("Error: requests library not available. Install with: pip install requests")
+        sys.exit(1)
+    
+    try:
+        # For public sheets, we can use the CSV export URL
+        # Try different URL formats for public Google Sheets
+        csv_urls = [
+            f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv&gid=0",
+            f"https://docs.google.com/spreadsheets/d/{sheet_id}/gviz/tq?tqx=out:csv&gid=0",
+            f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv"
+        ]
+        
+        response = None
+        for csv_url in csv_urls:
+            if DEBUG:
+                print(f"Trying URL: {csv_url}")
+            try:
+                response = requests.get(csv_url)
+                if response.status_code == 200:
+                    break
+            except:
+                continue
+        
+        if not response or response.status_code != 200:
+            raise Exception(f"Could not access Google Sheet. Status: {response.status_code if response else 'No response'}")
+        
+        if DEBUG:
+            print(f"Successfully fetched from: {csv_url}")
+        
+        # Parse CSV content
+        csv_content = response.text
+        csv_reader = csv.reader(StringIO(csv_content))
+        rows = list(csv_reader)
+        
+        if DEBUG:
+            print(f"Fetched {len(rows)} rows from public Google Sheets")
+        
+        return rows
+        
+    except Exception as e:
+        print(f"Error fetching from Google Sheets: {e}")
+        sys.exit(1)
+
+def fetch_csv_data(csv_path):
+    """Fetch data from local CSV file."""
+    with open(csv_path, "r", encoding="utf-8") as f:
+        rdr = csv.reader(f)
+        return list(rdr)
+
 # ---------- main ----------
 def main():
-    if len(sys.argv) < 4:
-        print("usage: ingest_google_forms.py <csv_in> <data_json_in> <data_json_out>")
+    if len(sys.argv) < 3:
+        print("usage: ingest_google_forms.py <data_json_in> <data_json_out> [csv_file_or_sheet_id]")
+        print("  - If csv_file_or_sheet_id is a file path: reads from CSV")
+        print("  - If csv_file_or_sheet_id is a Google Sheets ID: fetches from Google Sheets")
+        print("  - If omitted: uses GOOGLE_SHEETS_ID environment variable")
         sys.exit(2)
 
-    csv_path, data_in, data_out = sys.argv[1], sys.argv[2], sys.argv[3]
+    data_in, data_out = sys.argv[1], sys.argv[2]
+    
+    # Determine data source
+    if len(sys.argv) >= 4:
+        source = sys.argv[3]
+    else:
+        source = os.environ.get("GOOGLE_SHEETS_ID")
+        if not source:
+            print("Error: No data source specified. Provide CSV file, Google Sheets ID, or set GOOGLE_SHEETS_ID environment variable")
+            sys.exit(1)
+    
+    # Fetch data based on source type
+    if source.endswith('.csv') or '/' in source or '\\' in source:
+        # Treat as CSV file path
+        if not os.path.exists(source):
+            print(f"Error: CSV file not found: {source}")
+            sys.exit(1)
+        rows = fetch_csv_data(source)
+        if DEBUG:
+            print(f"Reading from CSV file: {source}")
+    else:
+        # Treat as Google Sheets ID
+        rows = fetch_google_sheets_data(source)
+        if DEBUG:
+            print(f"Reading from Google Sheets ID: {source}")
 
     # Load existing JSON
     with open(data_in, "r", encoding="utf-8") as f:
@@ -110,11 +197,6 @@ def main():
         u = normalize_url(r.get("url",""))
         if u:
             existing_urls.add(u)
-
-    # Read CSV
-    with open(csv_path, "r", encoding="utf-8") as f:
-        rdr = csv.reader(f)
-        rows = list(rdr)
 
     if not rows:
         print("empty CSV")
