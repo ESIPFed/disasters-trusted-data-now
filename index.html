@@ -78,22 +78,27 @@
     .resource-link { color: var(--primary); text-decoration: none; }
     .resource-link:hover { text-decoration: underline; }
     .type-tag { display: inline-block; padding: .125rem .5rem; background: var(--bg); border-radius: 4px; font-size: .875rem; color: var(--text); }
+    .edit-link { color: var(--text-light); text-decoration: none; font-size: .875rem; display: inline-flex; align-items: center; gap: .25rem; }
+    .edit-link:hover { color: var(--primary); text-decoration: underline; }
 
     .table-view { display: none; overflow-x: auto; border: 1px solid var(--border); border-radius: 6px; background: var(--white); }
     table { width: 100%; border-collapse: collapse; table-layout: fixed; }
     th { background: var(--bg); padding: .75rem 1rem; text-align: left; font-weight: 600; font-size: .875rem; color: var(--text); border-bottom: 1px solid var(--border); }
-    th:nth-child(1) { width: 28%; } /* Name - largest column */
-    th:nth-child(2) { width: 18%; } /* Type(s) */
-    th:nth-child(3) { width: 20%; } /* Status */
-    th:nth-child(4) { width: 18%; } /* Organization */
+    th:nth-child(1) { width: 25%; } /* Name */
+    th:nth-child(2) { width: 16%; } /* Type(s) */
+    th:nth-child(3) { width: 18%; } /* Accessibility */
+    th:nth-child(4) { width: 16%; } /* Organization */
     th:nth-child(5) { width: 8%; } /* Link */
-    th:nth-child(6) { width: 10%; text-align: center; } /* Accessibility */
+    th:nth-child(6) { width: 9%; text-align: center; } /* Website Status */
+    th:nth-child(7) { width: 8%; text-align: center; } /* Edit */
     td { padding: .75rem 1rem; border-bottom: 1px solid var(--border); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     td:first-child { white-space: normal; }
     td:nth-child(2) { white-space: normal; }
     td:nth-child(4) { white-space: normal; }
+    td:nth-child(3) { white-space: nowrap; } /* Accessibility column */
     td:nth-child(5) { white-space: nowrap; } /* Link column */
-    td:nth-child(6) { white-space: nowrap; text-align: center; } /* Status column */
+    td:nth-child(6) { white-space: nowrap; text-align: center; } /* Website Status column */
+    td:nth-child(7) { white-space: nowrap; text-align: center; } /* Edit column */
     .status-working { color: var(--success); font-weight: bold; }
     .status-warning { color: #f59e0b; font-weight: bold; }
 
@@ -137,10 +142,9 @@
             <option value="extreme-weather">Extreme weather</option>
             <option value="other">Other</option>
           </select>
-          <select id="statusFilter" aria-label="Filter by status">
-            <option value="">All Status</option>
-            <option value="active">Active</option>
-            <option value="inactive">Inactive</option>
+          <select id="statusFilter" aria-label="Filter by accessibility">
+            <option value="">All Accessibility</option>
+            <option value="public">Public</option>
           </select>
         </div>
 
@@ -165,10 +169,6 @@
         <div class="stat">
           <span class="stat-value" id="publicCount">0</span>
           <span class="stat-label">Public Access</span>
-        </div>
-        <div class="stat">
-          <span class="stat-value" id="activeCount">0</span>
-          <span class="stat-label">Active Now</span>
         </div>
         <div class="stat">
           <span class="stat-value" id="orgCount">0</span>
@@ -239,10 +239,11 @@
             <tr>
               <th>Name</th>
               <th>Type(s)</th>
-              <th>Status</th>
+              <th>Accessibility</th>
               <th>Organization</th>
               <th>Link</th>
-              <th>Accessibility</th>
+              <th>Website Status</th>
+              <th>Edit</th>
             </tr>
           </thead>
           <tbody id="tableBody"></tbody>
@@ -259,6 +260,34 @@
   <script>
     // === Replace this with your form's Preview URL (must be /d/e/.../viewform) ===
     const GOOGLE_FORM_VIEW_URL = "https://docs.google.com/forms/d/e/1FAIpQLSca1QqteZBgFN0qoY3APbMVH0i-xtmDoUXjCLtgKoT4-9NMeg/viewform";
+
+    // === Update Form Configuration ===
+    // OPTION 1: Use your existing submission form (recommended for simplicity)
+    // OPTION 2: Create a separate update form (better UX but more work)
+    
+    // To get the URL field entry ID for pre-filling:
+    // 1. Open your Google Form in edit mode
+    // 2. Click ⋮ (three dots) → "Get pre-filled link"
+    // 3. Fill the URL/Link field with "TEST_URL"
+    // 4. Click "Get link" and copy the URL
+    // 5. Extract the entry ID (e.g., entry.123456789)
+    
+    // OPTION 1: Use existing form (just get the entry ID for the URL field)
+    const UPDATE_FORM_BASE_URL = GOOGLE_FORM_VIEW_URL; // Reuse existing form
+    const UPDATE_FORM_URL_FIELD_ID = "entry.1253715788"; // URL field 
+    
+    // OPTION 2: Separate update form (uncomment these lines)
+    // const UPDATE_FORM_BASE_URL = "https://docs.google.com/forms/d/e/YOUR_UPDATE_FORM_ID/viewform";
+    // const UPDATE_FORM_URL_FIELD_ID = "entry.123456789";
+
+    // Generate pre-filled update form URL
+    function getUpdateFormURL(resourceURL) {
+      if (UPDATE_FORM_URL_FIELD_ID === "entry.REPLACE_WITH_YOUR_URL_FIELD_ENTRY_ID") {
+        // Not configured yet - just return the form without pre-fill
+        return UPDATE_FORM_BASE_URL;
+      }
+      return `${UPDATE_FORM_BASE_URL}?${UPDATE_FORM_URL_FIELD_ID}=${encodeURIComponent(resourceURL)}`;
+    }
 
     // Hook the button to open your form
     document.addEventListener('DOMContentLoaded', () => {
@@ -333,9 +362,9 @@
         const types = asTypeArray(resource.type);
         const labels = getTypeLabelsForUI(types);
         const pubBadge = resource.public ? '<span class="badge badge-public">Public</span>' : '<span class="badge badge-restricted">Restricted</span>';
-        const actBadge = resource.active ? '<span class="badge badge-active">Active</span>' : '<span class="badge badge-inactive">Inactive</span>';
         const sub = resource.subscription === true ? ' • Subscription' : '';
         const ro = resource.researchOrOps ? ` • ${escapeHTML(resource.researchOrOps)}` : '';
+        const editURL = getUpdateFormURL(resource.url || '');
         return `
           <div class="resource-card">
             <div class="resource-header">
@@ -343,12 +372,13 @@
                 <div class="resource-title">${escapeHTML(resource.name || 'Untitled')}</div>
                 <div class="resource-org">${escapeHTML(resource.organization || 'Unknown')}</div>
               </div>
-              <div class="resource-badges">${pubBadge}${actBadge}</div>
+              <div class="resource-badges">${pubBadge}</div>
             </div>
             <p class="resource-description">${escapeHTML(resource.description || '')}</p>
             <div class="resource-meta">
               <div>${labels.map(l => `<span class="type-tag">${escapeHTML(l)}</span>`).join(' ')}</div>
               <div><a href="${escapeAttr(resource.url || '#')}" target="_blank" rel="noopener noreferrer" class="resource-link">View Resource →</a></div>
+              <div><a href="${escapeAttr(editURL)}" target="_blank" rel="noopener noreferrer" class="edit-link">✏️ Suggest Edit</a></div>
               ${resource.contact ? `<div>📧 ${escapeHTML(resource.contact)}</div>` : ''}
               ${resource.notes ? `<div>📝 ${escapeHTML(resource.notes)}</div>` : ''}
               ${(sub || ro) ? `<div>${sub}${ro}</div>` : ''}
@@ -361,7 +391,6 @@
         const types = asTypeArray(resource.type);
         const labels = getTypeLabelsForUI(types);
         const pubBadge = resource.public ? '<span class="badge badge-public">Public</span>' : '<span class="badge badge-restricted">Restricted</span>';
-        const actBadge = resource.active ? '<span class="badge badge-active">Active</span>' : '<span class="badge badge-inactive">Inactive</span>';
         
         // Link status - simple emoji with colors
         let linkStatus = '—';
@@ -373,15 +402,17 @@
           }
         }
         
+        const editURL = getUpdateFormURL(resource.url || '');
         
         return `
           <tr>
             <td><strong>${escapeHTML(resource.name || 'Untitled')}</strong></td>
             <td>${labels.map(l => `<span class="type-tag">${escapeHTML(l)}</span>`).join(' ')}</td>
-            <td>${pubBadge} ${actBadge}</td>
+            <td>${pubBadge}</td>
             <td>${escapeHTML(resource.organization || '—')}</td>
             <td><a href="${escapeAttr(resource.url || '#')}" target="_blank" rel="noopener noreferrer" class="resource-link">View →</a></td>
             <td>${linkStatus}</td>
+            <td><a href="${escapeAttr(editURL)}" target="_blank" rel="noopener noreferrer" class="edit-link">✏️ Edit</a></td>
           </tr>
         `;
       }).join('');
@@ -393,7 +424,6 @@
     function updateStats() {
       document.getElementById('totalCount').textContent = resources.length;
       document.getElementById('publicCount').textContent = resources.filter(r => r.public).length;
-      document.getElementById('activeCount').textContent = resources.filter(r => r.active).length;
       const orgs = new Set(resources.map(r => (r.organization || '').trim()).filter(Boolean));
       document.getElementById('orgCount').textContent = orgs.size;
       
@@ -493,8 +523,7 @@
         const matchesType = !typeFilter || types.includes(typeFilter);
 
         let matchesStatus = true;
-        if (statusFilter === 'active') matchesStatus = resource.active === true;
-        else if (statusFilter === 'inactive') matchesStatus = resource.active === false;
+        if (statusFilter === 'public') matchesStatus = resource.public === true;
 
         return matchesSearch && matchesType && matchesStatus;
       });

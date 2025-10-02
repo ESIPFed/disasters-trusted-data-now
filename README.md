@@ -36,6 +36,41 @@ The project includes Python scripts for data management:
 
 New resources can be added through the Google Form linked in the web interface, or by directly editing `data.json`.
 
+#### How to Submit a New Resource
+
+1. Visit the [web interface](https://esipfed.github.io/disasters-trusted-data-now/)
+2. Click the **"+ Submit via Google Form"** button
+3. Fill out all required fields
+4. Submit the form
+5. Your submission will be reviewed and added during the next sync
+
+#### How to Update an Existing Resource
+
+Anyone can suggest updates or corrections to existing resources! Two easy ways:
+
+**Method 1: Click "Suggest Edit" on any resource** (Easiest!)
+1. Browse resources on the [web interface](https://esipfed.github.io/disasters-trusted-data-now/)
+2. Click the **"✏️ Suggest Edit"** link on any resource
+3. The submission form opens with the URL pre-filled
+4. Fill out the form with the updated information
+5. Submit - your update will be processed during the next sync
+
+**Method 2: Submit directly via the form**
+1. Go to the submission form
+2. Provide the **exact URL** of the resource you want to update
+3. Fill in the other fields with updated information
+4. Submit - your update will be processed during the next sync
+
+**How it works:** The system uses the resource URL as a unique identifier. When the same URL appears in a new submission, it automatically updates the existing entry rather than creating a duplicate.
+
+#### For Submitters: Editing Your Own Submission
+
+If you submitted a resource and want to make changes:
+
+- If you saved the "Edit your response" link from Google Forms, you can use it to modify your submission directly
+- Alternatively, use the "Update Existing Resource" form
+- Both methods will update the same resource in the database
+
 ## Data Structure
 
 Resources are stored in `data.json` with the following structure:
@@ -60,10 +95,18 @@ Resources are stored in `data.json` with the following structure:
 
 Contributions are welcome! Please:
 
-1. Use the Google Form to submit new resources
-2. Ensure all URLs are publicly accessible
-3. Provide accurate descriptions and categorization
-4. Include contact information when possible
+1. **New Resources**: Use the main Google Form to submit new resources
+2. **Updates/Corrections**: Use the "Update Existing Resource" form to modify existing entries
+3. **Direct Edits**: Advanced users can submit pull requests to modify `data.json` directly
+4. Ensure all URLs are publicly accessible
+5. Provide accurate descriptions and categorization
+6. Include contact information when possible
+
+### Community Guidelines
+
+- Anyone can suggest updates to existing resources, not just the original submitter
+- Updates are processed automatically based on URL matching
+- All submissions are reviewed before being published
 
 ## License
 
