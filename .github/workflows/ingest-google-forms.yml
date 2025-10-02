@@ -10,14 +10,17 @@ on:
       - 'scripts/ingest_google_forms.py'
       - 'data.json'
 
-# Note: This workflow fetches data directly from public Google Sheets.
+# Note: This workflow fetches data directly from Google Sheets (public or private).
 # 
 # Required GitHub Secrets:
 # - GOOGLE_SHEETS_ID: The ID of your Google Sheet (from the URL)
+# - GOOGLE_SHEETS_CREDENTIALS: Service account credentials JSON (for private sheets)
 # 
 # To set up:
-# 1. Make sure your Google Sheet is public (Anyone with the link can view)
-# 2. Add the Google Sheets ID as a GitHub secret
+# 1. Create a Google Cloud service account and enable Google Sheets API
+# 2. Share your Google Sheet with the service account email
+# 3. Add the credentials JSON as a GitHub secret
+# 4. For public sheets, GOOGLE_SHEETS_CREDENTIALS can be omitted
 
 jobs:
   ingest-forms:
@@ -39,6 +42,7 @@ jobs:
     - name: Run Google Forms ingestion
       env:
         GOOGLE_SHEETS_ID: ${{ secrets.GOOGLE_SHEETS_ID }}
+        GOOGLE_SHEETS_CREDENTIALS: ${{ secrets.GOOGLE_SHEETS_CREDENTIALS }}
       run: |
         python scripts/ingest_google_forms.py data.json data.json
         

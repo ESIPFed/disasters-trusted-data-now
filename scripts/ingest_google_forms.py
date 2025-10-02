@@ -15,6 +15,13 @@ from urllib.parse import urlsplit, urlunsplit, parse_qsl, urlencode
 from io import StringIO
 
 try:
+    import gspread
+    from google.oauth2.service_account import Credentials
+    GOOGLE_SHEETS_AVAILABLE = True
+except ImportError:
+    GOOGLE_SHEETS_AVAILABLE = False
+
+try:
     import requests
     REQUESTS_AVAILABLE = True
 except ImportError:
@@ -96,50 +103,91 @@ ALLOWED_TYPES = {
 }
 
 # ---------- Google Sheets functions ----------
-def fetch_google_sheets_data(sheet_id):
-    """Fetch data from public Google Sheets and return as CSV-like rows."""
-    if not REQUESTS_AVAILABLE:
-        print("Error: requests library not available. Install with: pip install requests")
-        sys.exit(1)
+def fetch_google_sheets_data(sheet_id, credentials_json=None):
+    """Fetch data from Google Sheets (public or private) and return as CSV-like rows."""
     
-    try:
-        # For public sheets, we can use the CSV export URL
-        # Try different URL formats for public Google Sheets
-        csv_urls = [
-            f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv&gid=0",
-            f"https://docs.google.com/spreadsheets/d/{sheet_id}/gviz/tq?tqx=out:csv&gid=0",
-            f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv"
-        ]
-        
-        response = None
-        for csv_url in csv_urls:
+    # Try authenticated access first (for private sheets)
+    if GOOGLE_SHEETS_AVAILABLE and credentials_json:
+        try:
             if DEBUG:
-                print(f"Trying URL: {csv_url}")
-            try:
-                response = requests.get(csv_url)
-                if response.status_code == 200:
-                    break
-            except:
-                continue
-        
-        if not response or response.status_code != 200:
-            raise Exception(f"Could not access Google Sheet. Status: {response.status_code if response else 'No response'}")
-        
-        if DEBUG:
-            print(f"Successfully fetched from: {csv_url}")
-        
-        # Parse CSV content
-        csv_content = response.text
-        csv_reader = csv.reader(StringIO(csv_content))
-        rows = list(csv_reader)
-        
-        if DEBUG:
-            print(f"Fetched {len(rows)} rows from public Google Sheets")
-        
-        return rows
-        
-    except Exception as e:
-        print(f"Error fetching from Google Sheets: {e}")
+                print("Attempting authenticated access to Google Sheets...")
+            
+            # Set up credentials
+            creds = Credentials.from_service_account_info(
+                json.loads(credentials_json),
+                scopes=['https://www.googleapis.com/auth/spreadsheets.readonly']
+            )
+            
+            # Connect to Google Sheets
+            gc = gspread.authorize(creds)
+            sheet = gc.open_by_key(sheet_id).sheet1
+            
+            # Get all values
+            all_values = sheet.get_all_values()
+            
+            if DEBUG:
+                print(f"Fetched {len(all_values)} rows from Google Sheets via API")
+            
+            return all_values
+            
+        except Exception as e:
+            if DEBUG:
+                print(f"Authenticated access failed: {e}")
+            # Fall through to try public access
+    
+    # Try public access (for public sheets)
+    if REQUESTS_AVAILABLE:
+        try:
+            if DEBUG:
+                print("Attempting public access to Google Sheets...")
+            
+            # Try different URL formats for public Google Sheets
+            csv_urls = [
+                f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv&gid=0",
+                f"https://docs.google.com/spreadsheets/d/{sheet_id}/gviz/tq?tqx=out:csv&gid=0",
+                f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv"
+            ]
+            
+            response = None
+            for csv_url in csv_urls:
+                if DEBUG:
+                    print(f"Trying URL: {csv_url}")
+                try:
+                    response = requests.get(csv_url)
+                    if response.status_code == 200:
+                        break
+                except:
+                    continue
+            
+            if not response or response.status_code != 200:
+                raise Exception(f"Could not access Google Sheet. Status: {response.status_code if response else 'No response'}")
+            
+            if DEBUG:
+                print(f"Successfully fetched from: {csv_url}")
+            
+            # Parse CSV content
+            csv_content = response.text
+            csv_reader = csv.reader(StringIO(csv_content))
+            rows = list(csv_reader)
+            
+            if DEBUG:
+                print(f"Fetched {len(rows)} rows from public Google Sheets")
+            
+            return rows
+            
+        except Exception as e:
+            if DEBUG:
+                print(f"Public access failed: {e}")
+    
+    # If both methods failed
+    if not GOOGLE_SHEETS_AVAILABLE and not REQUESTS_AVAILABLE:
+        print("Error: Neither Google Sheets API nor requests library available.")
+        print("Install with: pip install gspread google-auth requests")
+        sys.exit(1)
+    else:
+        print("Error: Could not access Google Sheet with either authenticated or public methods.")
+        print("For private sheets, ensure GOOGLE_SHEETS_CREDENTIALS is set correctly.")
+        print("For public sheets, ensure the sheet is publicly accessible.")
         sys.exit(1)
 
 def fetch_csv_data(csv_path):
@@ -179,7 +227,8 @@ def main():
             print(f"Reading from CSV file: {source}")
     else:
         # Treat as Google Sheets ID
-        rows = fetch_google_sheets_data(source)
+        credentials_json = os.environ.get("GOOGLE_SHEETS_CREDENTIALS")
+        rows = fetch_google_sheets_data(source, credentials_json)
         if DEBUG:
             print(f"Reading from Google Sheets ID: {source}")
 
