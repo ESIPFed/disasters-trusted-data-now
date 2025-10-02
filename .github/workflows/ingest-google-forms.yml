@@ -1,72 +1,57 @@
-name: Ingest Google Forms Data
+name: Ingest from Google Forms (to PR)
 
 on:
   schedule:
-    # Run every 6 hours
-    - cron: '0 */6 * * *'
-  workflow_dispatch: # Allow manual triggering
-  push:
-    paths:
-      - 'scripts/ingest_google_forms.py'
-      - 'data.json'
+    - cron: "0 */6 * * *"  # every 6 hours
+  workflow_dispatch:
 
-# Note: This workflow fetches data directly from Google Sheets using CSV export URL.
-# 
-# Required GitHub Secrets:
-# - SHEET_CSV_URL: The CSV export URL from your Google Sheet
-# 
-# To set up:
-# 1. Go to your Google Sheet
-# 2. Click File → Download → Comma-separated values (.csv)
-# 3. Copy the download URL from your browser's network tab, or use:
-#    https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID/export?format=csv&gid=0
-# 4. Add the URL as a GitHub secret named SHEET_CSV_URL
+permissions:
+  contents: write
+  pull-requests: write
 
 jobs:
-  ingest-forms:
+  ingest:
     runs-on: ubuntu-latest
-    
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-      
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.9'
-        
-    - name: Fetch CSV from Google Sheets
-      run: |
-        if [ -z "${{ secrets.SHEET_CSV_URL }}" ]; then
-          echo "SHEET_CSV_URL secret is not set"; exit 1
-        fi
-        echo "Fetching CSV from: $SHEET_CSV_URL"
-        curl -L -v "$SHEET_CSV_URL" -o submissions.csv
-        echo "CSV file size: $(wc -c < submissions.csv) bytes"
-        echo "First few lines:"
-        head -3 submissions.csv || true
-        # Check if we got HTML instead of CSV
-        if grep -q "<!DOCTYPE html>" submissions.csv; then
-          echo "ERROR: Got HTML instead of CSV. Check if the Google Sheet is public or the URL is correct."
-          exit 1
-        fi
-      env:
-        SHEET_CSV_URL: ${{ secrets.SHEET_CSV_URL }}
-        
-    - name: Install dependencies
-      run: |
-        pip install -r requirements.txt
-        
-    - name: Run Google Forms ingestion
-      run: |
-        python scripts/ingest_google_forms.py submissions.csv data.json data.json
-        
-    - name: Create Pull Request
-      if: github.event_name != 'pull_request'
-      uses: peter-evans/create-pull-request@v6
-      with:
-        commit-message: "chore(forms): ingest new resources from Google Forms"
-        title: "chore(forms): add resources from Google Forms"
-        body: "This PR adds new resources from the Google Forms submission form."
-        branch: "chore/forms-ingest"
-        delete-branch: true
+      - uses: actions/checkout@v4
+
+      - name: Fetch CSV
+        run: |
+          if [ -z "${{ secrets.SHEET_CSV_URL }}" ]; then
+            echo "SHEET_CSV_URL secret is not set"; exit 1
+          fi
+          curl -L "$SHEET_CSV_URL" -o submissions.csv
+        env:
+          SHEET_CSV_URL: ${{ secrets.SHEET_CSV_URL }}
+
+      - name: Install Python (for parser)
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Inspect CSV (debug)
+        run: |
+          wc -l submissions.csv || true
+          echo "----- HEAD -----"
+          head -5 submissions.csv || true
+
+      - name: Parse and update data.json
+        id: ingest
+        run: |
+          python scripts/ingest_google_forms.py submissions.csv data.json out.json
+          if cmp -s data.json out.json; then
+            echo "no_changes=true" >> "$GITHUB_OUTPUT"
+          else
+            mv out.json data.json
+            echo "no_changes=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create Pull Request
+        if: steps.ingest.outputs.no_changes == 'false'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "chore(forms): ingest new resources from Google Forms"
+          title: "chore(forms): add resources from Google Forms"
+          body: "This PR adds new resources from the public submission form."
+          branch: "chore/forms-ingest"
+          delete-branch: true
