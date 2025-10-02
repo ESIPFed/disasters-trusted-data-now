@@ -13,9 +13,7 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 202
+    "accessible": true
   },
   {
     "name": "Global Disaster Alert and Coordination System (GDACS)",
@@ -31,9 +29,7 @@
     "public": true,
     "active": true,
     "type": "earthquake",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "IFRC GO Platform",
@@ -49,9 +45,7 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "U.S. Drought Monitor",
@@ -67,9 +61,22 @@
     "public": true,
     "active": true,
     "type": "drought",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
+  },
+  {
+    "name": "Planscape",
+    "description": "Planscape Forest Treatment Tool",
+    "url": "https://www.planscape.org/",
+    "organization": "Spatial Informatics Group",
+    "contact": "",
+    "contributorName": "tim@caflc.dev",
+    "contributorEmail": "tim@caflc.dev",
+    "notes": "",
+    "subscription": false,
+    "researchOrOps": "Operation",
+    "public": true,
+    "active": true,
+    "type": "wildfire"
   },
   {
     "name": "ReliefWeb API",
@@ -85,9 +92,7 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "NASA Disasters Mapping Portal",
@@ -103,12 +108,10 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
-    "name": "Copernicus Emergency Management Service (EMS) – Rapid Mapping",
+    "name": "Copernicus Emergency Management Service (EMS) \u2013 Rapid Mapping",
     "description": "On-demand rapid mapping for disasters in the EU and globally (activation products: damage, flood extent, etc.).",
     "url": "https://emergency.copernicus.eu/",
     "organization": "European Commission (JRC)",
@@ -121,9 +124,7 @@
     "public": true,
     "active": true,
     "type": "flood",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "UNOSAT (UNITAR) Rapid Mapping",
@@ -139,9 +140,7 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "ACAPS",
@@ -157,9 +156,7 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "MapAction Maps & Data Hub",
@@ -175,12 +172,10 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
-    "name": "Pacific Disaster Center (PDC) – DisasterAWARE (Public)",
+    "name": "Pacific Disaster Center (PDC) \u2013 DisasterAWARE (Public)",
     "description": "Global multi-hazard alerts and situational awareness map (public view).",
     "url": "https://www.pdc.org/disaster-alert",
     "organization": "Pacific Disaster Center (PDC Global)",
@@ -193,9 +188,7 @@
     "public": true,
     "active": true,
     "type": "extreme-weather",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "USGS Earthquake Catalog API",
@@ -211,10 +204,7 @@
     "public": true,
     "active": true,
     "type": "earthquake",
-    "accessible": false,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityError": "HTTP 404",
-    "accessibilityStatus": 404
+    "accessible": false
   },
   {
     "name": "USGS ShakeMap",
@@ -230,9 +220,7 @@
     "public": true,
     "active": true,
     "type": "earthquake",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "USGS PAGER",
@@ -242,19 +230,17 @@
     "contact": "",
     "contributorName": "",
     "contributorEmail": "",
-    "notes": "Includes alert levels (Green–Red) and exposure summaries.",
+    "notes": "Includes alert levels (Green\u2013Red) and exposure summaries.",
     "subscription": false,
     "researchOrOps": "Research",
     "public": true,
     "active": true,
     "type": "earthquake",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "EMSC Real-time Earthquake Data",
-    "description": "European-Mediterranean Seismological Centre – global near-real-time earthquake detections and notifications.",
+    "description": "European-Mediterranean Seismological Centre \u2013 global near-real-time earthquake detections and notifications.",
     "url": "https://www.emsc-csem.org/",
     "organization": "EMSC-CSEM",
     "contact": "",
@@ -266,9 +252,7 @@
     "public": true,
     "active": true,
     "type": "earthquake",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "GEOFON Global Earthquake Catalogue",
@@ -284,9 +268,7 @@
     "public": true,
     "active": true,
     "type": "earthquake",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "NOAA NWS Tsunami Warning Centers (PTWC, NTWC)",
@@ -302,9 +284,7 @@
     "public": true,
     "active": true,
     "type": "extreme-weather",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "IOC Sea Level Station Monitoring Facility",
@@ -320,9 +300,7 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "JMA Tsunami & Earthquake Information",
@@ -338,10 +316,7 @@
     "public": true,
     "active": true,
     "type": "earthquake",
-    "accessible": false,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityError": "HTTP 403",
-    "accessibilityStatus": 403
+    "accessible": false
   },
   {
     "name": "USGS Volcano Hazards Program",
@@ -357,9 +332,7 @@
     "public": true,
     "active": true,
     "type": "extreme-weather",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "USGS Volcano Notification Service (VNS)",
@@ -375,9 +348,7 @@
     "public": true,
     "active": true,
     "type": "extreme-weather",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "Smithsonian Global Volcanism Program (GVP)",
@@ -393,9 +364,7 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "NOAA NCEI Global Volcano Locations",
@@ -411,9 +380,7 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "NOAA National Hurricane Center (NHC)",
@@ -429,9 +396,7 @@
     "public": true,
     "active": true,
     "type": "hurricane",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "Joint Typhoon Warning Center (JTWC)",
@@ -447,12 +412,10 @@
     "public": true,
     "active": true,
     "type": "hurricane",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
-    "name": "IMD RSMC New Delhi – Tropical Cyclone",
+    "name": "IMD RSMC New Delhi \u2013 Tropical Cyclone",
     "description": "Official advisories & track data for Bay of Bengal and Arabian Sea.",
     "url": "https://rsmcnewdelhi.imd.gov.in/",
     "organization": "India Meteorological Department (IMD)",
@@ -465,15 +428,13 @@
     "public": true,
     "active": true,
     "type": "hurricane",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
-    "name": "RSMC La Réunion – Météo-France",
+    "name": "RSMC La R\u00e9union \u2013 M\u00e9t\u00e9o-France",
     "description": "Official tropical cyclone warnings for the South-West Indian Ocean.",
     "url": "https://www.meteo.fr/temps/domtom/La_Reunion/webcmrs9.0/anglais/index.html",
-    "organization": "Météo-France",
+    "organization": "M\u00e9t\u00e9o-France",
     "contact": "",
     "contributorName": "",
     "contributorEmail": "",
@@ -483,12 +444,10 @@
     "public": true,
     "active": true,
     "type": "hurricane",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
-    "name": "RSMC Nadi – Fiji Meteorological Service",
+    "name": "RSMC Nadi \u2013 Fiji Meteorological Service",
     "description": "Official tropical cyclone warnings for the South-West Pacific.",
     "url": "https://www.met.gov.fj/",
     "organization": "Fiji Meteorological Service",
@@ -501,9 +460,7 @@
     "public": true,
     "active": true,
     "type": "hurricane",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "NASA FIRMS (MODIS/VIIRS Active Fire)",
@@ -519,12 +476,10 @@
     "public": true,
     "active": true,
     "type": "wildfire",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
-    "name": "EFFIS – European Forest Fire Information System",
+    "name": "EFFIS \u2013 European Forest Fire Information System",
     "description": "EU wildfire monitoring (danger, perimeters, burned areas).",
     "url": "https://effis.emergency.copernicus.eu/",
     "organization": "Copernicus/EC JRC",
@@ -537,9 +492,7 @@
     "public": true,
     "active": true,
     "type": "wildfire",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "Global Wildfire Information System (GWIS)",
@@ -555,12 +508,10 @@
     "public": true,
     "active": true,
     "type": "wildfire",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
-    "name": "InciWeb – Incident Information System",
+    "name": "InciWeb \u2013 Incident Information System",
     "description": "Official US interagency incident pages for wildfires and other incidents.",
     "url": "https://inciweb.nwcg.gov/",
     "organization": "US Interagency (NIFC/NWCG)",
@@ -573,9 +524,7 @@
     "public": true,
     "active": true,
     "type": "wildfire",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "NIFC Open Data",
@@ -591,12 +540,10 @@
     "public": true,
     "active": true,
     "type": "wildfire",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
-    "name": "GloFAS – Global Flood Awareness System",
+    "name": "GloFAS \u2013 Global Flood Awareness System",
     "description": "Global flood forecasts with probabilistic outlooks and river discharge anomalies.",
     "url": "https://www.globalfloods.eu/",
     "organization": "Copernicus/EC JRC",
@@ -609,12 +556,10 @@
     "public": true,
     "active": true,
     "type": "flood",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
-    "name": "EFAS – European Flood Awareness System",
+    "name": "EFAS \u2013 European Flood Awareness System",
     "description": "Flood forecasts and situation for Europe; watches and reports.",
     "url": "https://www.efas.eu/",
     "organization": "Copernicus/EC JRC",
@@ -627,9 +572,7 @@
     "public": true,
     "active": true,
     "type": "flood",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "USGS National Water Information System (NWIS)",
@@ -645,9 +588,7 @@
     "public": true,
     "active": true,
     "type": "flood",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "NOAA Water (AHPS River Observations)",
@@ -663,9 +604,7 @@
     "public": true,
     "active": true,
     "type": "flood",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "UMD/NASA Global Flood Monitoring System (GFMS)",
@@ -681,9 +620,7 @@
     "public": true,
     "active": true,
     "type": "flood",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "Dartmouth Flood Observatory (DFO)",
@@ -699,9 +636,7 @@
     "public": true,
     "active": true,
     "type": "flood",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "NOAA/NWS Weather API",
@@ -717,9 +652,7 @@
     "public": true,
     "active": true,
     "type": "extreme-weather",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "NWS Alerts (CAP)",
@@ -735,9 +668,7 @@
     "public": true,
     "active": true,
     "type": "extreme-weather",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "AirNow API",
@@ -753,9 +684,7 @@
     "public": true,
     "active": true,
     "type": "wildfire",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "OpenAQ",
@@ -771,9 +700,7 @@
     "public": true,
     "active": true,
     "type": "extreme-weather",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "Copernicus Atmosphere Monitoring Service (CAMS)",
@@ -789,9 +716,7 @@
     "public": true,
     "active": true,
     "type": "extreme-weather",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "NASA Worldview (EOSDIS)",
@@ -807,9 +732,7 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "NASA Earthdata Search",
@@ -825,9 +748,7 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "USGS EarthExplorer (Landsat, others)",
@@ -843,9 +764,7 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "Copernicus Data Space Ecosystem",
@@ -861,9 +780,7 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "Maxar Open Data Program",
@@ -879,9 +796,7 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "OpenAerialMap",
@@ -897,9 +812,7 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "NASA ARIA Damage Proxy Maps",
@@ -915,9 +828,7 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 202
+    "accessible": true
   },
   {
     "name": "NOAA GOES Imagery (GOES-East/West)",
@@ -933,9 +844,7 @@
     "public": true,
     "active": true,
     "type": "extreme-weather",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "WorldPop",
@@ -951,9 +860,7 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "Global Human Settlement Layer (GHSL)",
@@ -969,9 +876,7 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "High Resolution Settlement Layer (HRSL)",
@@ -987,9 +892,7 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "Microsoft Building Footprints (Open Data)",
@@ -1005,9 +908,7 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "OpenStreetMap (OSM)",
@@ -1023,12 +924,10 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
-    "name": "OSM – Overpass API",
+    "name": "OSM \u2013 Overpass API",
     "description": "Query OSM features by tags/geometry for targeted extracts.",
     "url": "https://overpass-api.de/",
     "organization": "Community",
@@ -1041,9 +940,7 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "OCHA COD/FOD (Common Operational Datasets)",
@@ -1059,9 +956,7 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "geoBoundaries",
@@ -1077,10 +972,7 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": false,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityError": "HTTP 403",
-    "accessibilityStatus": 403
+    "accessible": false
   },
   {
     "name": "GADM",
@@ -1090,15 +982,13 @@
     "contact": "",
     "contributorName": "",
     "contributorEmail": "",
-    "notes": "Non-commercial use only – check license. | Other type(s): admin/base",
+    "notes": "Non-commercial use only \u2013 check license. | Other type(s): admin/base",
     "subscription": false,
     "researchOrOps": "Research",
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "EIA Open Data (Electric System Operating Data)",
@@ -1114,9 +1004,7 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "HIFLD Open (ArcGIS Hub)",
@@ -1132,10 +1020,7 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": false,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityError": "HTTP 403",
-    "accessibilityStatus": 403
+    "accessible": false
   },
   {
     "name": "US National Flood Hazard Layer (NFHL)",
@@ -1151,10 +1036,7 @@
     "public": true,
     "active": true,
     "type": "flood",
-    "accessible": false,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityError": "HTTP 403",
-    "accessibilityStatus": 403
+    "accessible": false
   },
   {
     "name": "FEMA National Risk Index (NRI)",
@@ -1170,9 +1052,7 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "FEMA OpenFEMA",
@@ -1188,9 +1068,7 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "FEMA Open Shelters (NSS)",
@@ -1206,9 +1084,7 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "PowerOutage.us (Public Map)",
@@ -1224,9 +1100,7 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "PowerOutage REST API (Products)",
@@ -1242,9 +1116,7 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "Cloudflare Radar",
@@ -1260,9 +1132,7 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "NetBlocks Internet Observatory",
@@ -1278,9 +1148,7 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "RIPE Atlas",
@@ -1296,9 +1164,7 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "Waze for Cities Data",
@@ -1314,12 +1180,10 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
-    "name": "511 SF Bay – Work Zone Data Exchange (WZDx)",
+    "name": "511 SF Bay \u2013 Work Zone Data Exchange (WZDx)",
     "description": "Regional WZDx feed for planned/active closures and detours.",
     "url": "https://511.org/open-data/traffic",
     "organization": "Metropolitan Transportation Commission (MTC)",
@@ -1332,9 +1196,7 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "511NY Developers API",
@@ -1350,9 +1212,7 @@
     "public": true,
     "active": true,
     "type": "extreme-weather",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "511 Wisconsin Developers",
@@ -1368,9 +1228,7 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "Iowa DOT 511 (Data.gov)",
@@ -1386,12 +1244,10 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
-    "name": "WFP Logistics Cluster – LogIE/Access Maps",
+    "name": "WFP Logistics Cluster \u2013 LogIE/Access Maps",
     "description": "Operational logistics information, access constraints and assessments.",
     "url": "https://logcluster.org/",
     "organization": "WFP Logistics Cluster",
@@ -1404,9 +1260,7 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "WHO Health Emergency Dashboard",
@@ -1422,9 +1276,7 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "PAHO/WHO Health Emergencies Dashboards",
@@ -1440,9 +1292,7 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "CDC/ATSDR Social Vulnerability Index (SVI)",
@@ -1458,9 +1308,7 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "INFORM Risk Index",
@@ -1476,9 +1324,7 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "World Bank Open Data (Indicators API)",
@@ -1494,12 +1340,10 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
-    "name": "US Census – American Community Survey (ACS) API",
+    "name": "US Census \u2013 American Community Survey (ACS) API",
     "description": "Demographic, housing, economic data for the US via API.",
     "url": "https://www.census.gov/programs-surveys/acs/data/data-via-api.html",
     "organization": "U.S. Census Bureau",
@@ -1512,12 +1356,10 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
-    "name": "Red Cross – Find Open Shelters",
+    "name": "Red Cross \u2013 Find Open Shelters",
     "description": "Public map of active open shelters and service sites.",
     "url": "https://www.redcross.org/get-help/disaster-relief-and-recovery-services/find-an-open-shelter.html",
     "organization": "American Red Cross",
@@ -1530,12 +1372,10 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
-    "name": "HIFLD – National Shelter System Facilities (archival)",
+    "name": "HIFLD \u2013 National Shelter System Facilities (archival)",
     "description": "Shelter facilities points historically published via HIFLD/DHS.",
     "url": "https://catalog.data.gov/dataset/national-shelter-system-facilities",
     "organization": "DHS/HIFLD",
@@ -1548,9 +1388,7 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "USGS Volcano Updates (status & alerts)",
@@ -1566,12 +1404,10 @@
     "public": true,
     "active": true,
     "type": "extreme-weather",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
-    "name": "USGS Landslide Hazard Program – Inventories",
+    "name": "USGS Landslide Hazard Program \u2013 Inventories",
     "description": "Landslide inventories and hazard info (US).",
     "url": "https://www.usgs.gov/programs/landslide-hazards",
     "organization": "USGS",
@@ -1584,9 +1420,7 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "NASA Global Landslide Catalog",
@@ -1602,9 +1436,7 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "511 Iowa Website",
@@ -1620,9 +1452,7 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "511 Wisconsin Website",
@@ -1638,9 +1468,7 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "511 New York Website",
@@ -1656,10 +1484,7 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": false,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityError": "Connection Error",
-    "accessibilityStatus": 0
+    "accessible": false
   },
   {
     "name": "CRASAR U-DROIDs (sUAS Disaster Imagery Dataset)",
@@ -1675,9 +1500,7 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "OpenInfraMap",
@@ -1693,12 +1516,10 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
-    "name": "Global Administrative data – Natural Earth",
+    "name": "Global Administrative data \u2013 Natural Earth",
     "description": "Cultural/physical vector layers (boundaries, populated places, roads).",
     "url": "https://www.naturalearthdata.com/",
     "organization": "Natural Earth",
@@ -1711,9 +1532,7 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "NOAA Storm Prediction Center (SPC)",
@@ -1729,12 +1548,10 @@
     "public": true,
     "active": true,
     "type": "tornado",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
-    "name": "NOAA National Weather Service – CAP Documentation",
+    "name": "NOAA National Weather Service \u2013 CAP Documentation",
     "description": "Documentation and resources for consuming NWS CAP alerts.",
     "url": "https://vlab.noaa.gov/web/nws-common-alerting-protocol",
     "organization": "NOAA NWS",
@@ -1747,9 +1564,7 @@
     "public": true,
     "active": true,
     "type": "extreme-weather",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "OurAirports",
@@ -1765,10 +1580,7 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": false,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityError": "HTTP 503",
-    "accessibilityStatus": 503
+    "accessible": false
   },
   {
     "name": "USGS 3D Elevation Program (3DEP)",
@@ -1784,12 +1596,10 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
-    "name": "Natural Hazards – NASA IMERG (GPM)",
+    "name": "Natural Hazards \u2013 NASA IMERG (GPM)",
     "description": "Global precipitation estimates (half-hourly) useful for flood and landslide nowcasting.",
     "url": "https://gpm.nasa.gov/data/imerg",
     "organization": "NASA GPM",
@@ -1802,9 +1612,7 @@
     "public": true,
     "active": true,
     "type": "flood",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "NOAA Storm Prediction Center (SPC)",
@@ -1820,9 +1628,7 @@
     "public": true,
     "active": true,
     "type": "tornado",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "NOAA NWS Tornado Warnings (CAP/RSS)",
@@ -1838,9 +1644,7 @@
     "public": true,
     "active": true,
     "type": "tornado",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "NOAA NCEI Storm Events Database (Tornadoes)",
@@ -1856,14 +1660,11 @@
     "public": true,
     "active": true,
     "type": "tornado",
-    "accessible": false,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityError": "Timeout",
-    "accessibilityStatus": 0
+    "accessible": false
   },
   {
-    "name": "NOAA Weather Prediction Center (WPC) – Excessive Rainfall Outlook (ERO)",
-    "description": "National risk outlook for flash flooding (Days 1–3).",
+    "name": "NOAA Weather Prediction Center (WPC) \u2013 Excessive Rainfall Outlook (ERO)",
+    "description": "National risk outlook for flash flooding (Days 1\u20133).",
     "url": "https://www.wpc.ncep.noaa.gov/",
     "organization": "NOAA / NWS WPC",
     "contact": "",
@@ -1875,10 +1676,7 @@
     "public": true,
     "active": true,
     "type": "extreme-weather",
-    "accessible": false,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityError": "Timeout",
-    "accessibilityStatus": 0
+    "accessible": false
   },
   {
     "name": "World Air Quality Index (WAQI)",
@@ -1894,10 +1692,7 @@
     "public": true,
     "active": true,
     "type": "extreme-weather",
-    "accessible": false,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityError": "Timeout",
-    "accessibilityStatus": 0
+    "accessible": false
   },
   {
     "name": "Canadian Wildland Fire Information System (CWFIS)",
@@ -1913,10 +1708,7 @@
     "public": true,
     "active": true,
     "type": "wildfire",
-    "accessible": false,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityError": "Timeout",
-    "accessibilityStatus": 0
+    "accessible": false
   },
   {
     "name": "PowerOutage.us",
@@ -1932,9 +1724,7 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   },
   {
     "name": "Esri Disaster Response Program (DRP)",
@@ -1950,10 +1740,7 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": false,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityError": "HTTP 404",
-    "accessibilityStatus": 404
+    "accessible": false
   },
   {
     "name": "Copernicus EMS Rapid Mapping",
@@ -1969,8 +1756,6 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-10-02T21:13:47.758910+00:00",
-    "accessibilityStatus": 200
+    "accessible": true
   }
 ]
