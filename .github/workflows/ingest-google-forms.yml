@@ -40,7 +40,11 @@ jobs:
         if [ -z "${{ secrets.SHEET_CSV_URL }}" ]; then
           echo "SHEET_CSV_URL secret is not set"; exit 1
         fi
-        curl -L "$SHEET_CSV_URL" -o submissions.csv
+        echo "Fetching CSV from: $SHEET_CSV_URL"
+        curl -L -v "$SHEET_CSV_URL" -o submissions.csv
+        echo "CSV file size: $(wc -c < submissions.csv) bytes"
+        echo "First few lines:"
+        head -3 submissions.csv || true
       env:
         SHEET_CSV_URL: ${{ secrets.SHEET_CSV_URL }}
         
@@ -52,15 +56,12 @@ jobs:
       run: |
         python scripts/ingest_google_forms.py data.json data.json submissions.csv
         
-    - name: Commit and push changes
+    - name: Create Pull Request
       if: github.event_name != 'pull_request'
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add data.json
-        if git diff --staged --quiet; then
-          echo "No changes to commit"
-        else
-          git commit -m "Update data from Google Forms submissions [skip ci]"
-          git push
-        fi
+      uses: peter-evans/create-pull-request@v6
+      with:
+        commit-message: "chore(forms): ingest new resources from Google Forms"
+        title: "chore(forms): add resources from Google Forms"
+        body: "This PR adds new resources from the Google Forms submission form."
+        branch: "chore/forms-ingest"
+        delete-branch: true
