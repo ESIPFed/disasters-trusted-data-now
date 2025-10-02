@@ -2,8 +2,9 @@
 """
 Google Forms Data Ingest Script for Trusted Data Now
 
-This script fetches data directly from Google Sheets and adds new resources
-to the data.json file, handling deduplication and data normalization.
+This script fetches data directly from Google Sheets and synchronizes it with
+the data.json file, handling additions, updates, and removals with deduplication
+and data normalization.
 
 ESIP Federation Disasters Cluster Project
 Contributor: Jeil Oh (jeoh@utexas.edu)
@@ -191,12 +192,14 @@ def main():
     if not isinstance(data, list):
         data = []
 
-    # Track duplicates by normalized URL
+    # Create lookup maps for existing data
+    existing_by_url = {}  # normalized_url -> resource
     existing_urls = set()
     for r in data:
         u = normalize_url(r.get("url",""))
         if u:
             existing_urls.add(u)
+            existing_by_url[u] = r
 
     if not rows:
         print("empty CSV")
@@ -224,8 +227,12 @@ def main():
     if DEBUG:
         print("Header mapping:", {k: (headers[v] if v is not None else None) for k,v in idx.items()})
 
+    # Process all rows from Google Sheets
     added = 0
+    updated = 0
     skipped = []
+    new_data = []
+    processed_urls = set()
 
     for n, r in enumerate(rows[1:], start=2):  # CSV row numbers (1=header)
         def cell(ix): return norm(r[ix]) if ix is not None and ix < len(r) else ""
@@ -269,8 +276,6 @@ def main():
 
         url_norm = normalize_url(res["url"])
         if not url_norm:           reasons.append("bad url")
-        if url_norm in existing_urls:
-            reasons.append("duplicate url")
 
         if reasons:
             skipped.append((n, reasons, res, raw_types))
@@ -284,13 +289,47 @@ def main():
             other_note = "Other type(s): " + ", ".join(sorted(set(other_texts)))
             res["notes"] = (res["notes"] + (" | " if res["notes"] else "") + other_note).strip()
 
-        # Save
+        # Set normalized URL
         res["url"] = url_norm
-        data.append(res)
-        existing_urls.add(url_norm)
-        added += 1
+        processed_urls.add(url_norm)
 
-    print(f"Added {added} new resources.")
+        # Check if this is a new resource or an update
+        if url_norm in existing_by_url:
+            # Update existing resource
+            existing_res = existing_by_url[url_norm]
+            # Preserve accessibility data if it exists
+            if "accessible" in existing_res:
+                res["accessible"] = existing_res["accessible"]
+            if "lastChecked" in existing_res:
+                res["lastChecked"] = existing_res["lastChecked"]
+            if "accessibilityStatus" in existing_res:
+                res["accessibilityStatus"] = existing_res["accessibilityStatus"]
+            if "accessibilityError" in existing_res:
+                res["accessibilityError"] = existing_res["accessibilityError"]
+            
+            new_data.append(res)
+            updated += 1
+            if DEBUG:
+                print(f"Updated resource: {res['name']}")
+        else:
+            # New resource
+            new_data.append(res)
+            added += 1
+            if DEBUG:
+                print(f"Added new resource: {res['name']}")
+
+    # Find resources that were removed from Google Sheets
+    removed = 0
+    for url_norm, existing_res in existing_by_url.items():
+        if url_norm not in processed_urls:
+            removed += 1
+            if DEBUG:
+                print(f"Removed resource: {existing_res.get('name', 'Unknown')}")
+
+    # Update the data with new/updated resources
+    data = new_data
+
+    print(f"Sync complete: Added {added} new, updated {updated} existing, removed {removed} resources.")
     if DEBUG and skipped:
         print(f"Skipped {len(skipped)} row(s):")
         for n, reasons, res, raw_types in skipped[:20]:
