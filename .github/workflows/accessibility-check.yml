@@ -30,7 +30,7 @@ jobs:
         
     - name: Run accessibility check
       run: |
-        python scripts/check_accessibility.py data.json
+        python scripts/check_accessibility.py data.json --check-all
         
     - name: Commit and push changes
       if: github.event_name != 'pull_request'
