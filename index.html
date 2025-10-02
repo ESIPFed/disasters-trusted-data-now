@@ -281,23 +281,39 @@
     const UPDATE_FORM_BASE_URL = GOOGLE_FORM_VIEW_URL; // Reuse existing form
     
     // Map resource fields to Google Form entry IDs
-    // Update these with your actual form field entry IDs
+    // These are the correct entry IDs from your Google Form
     const FORM_FIELD_MAPPING = {
-      'name': 'entry.1906372411',           // Data Name field
-      'description': 'entry.711428864',      // Description field
-      'url': 'entry.1253715788',            // URL/Link field
-      'organization': 'entry.1831871787',    // Organization field
-      'contact': 'entry.1142518214',        // Contact field
-      'contributorName': 'entry.1970110956', // Contributor Name field
-      'contributorEmail': 'entry.558055174', // Email field (already filled from login)
-      'notes': 'entry.1969582747',          // Notes field
-      'type': 'entry.1382831684',           // Type field (disaster type)
-      // Add more fields as needed
+      'contributorName': 'entry.479540527',  // Contributor Name field
+      'name': 'entry.1602191747',            // Data Name field
+      'description': 'entry.1201995075',     // Description field
+      'type': 'entry.960531407',             // Type field (disaster type - checkboxes)
+      'url': 'entry.1253715788',             // URL/Link field
+      'organization': 'entry.183928982',     // Organization field
+      'contact': 'entry.1491758344',         // Contact field
+      'notes': 'entry.1134850783',           // Notes field
+      'public': 'entry.1063402783',          // Publicly available (Yes/No)
+      'researchOrOps': 'entry.1368198965',   // Use case (Research/Operation)
+      'active': 'entry.1265784590',          // Currently active (Yes/No)
     }; 
     
     // OPTION 2: Separate update form (uncomment these lines)
     // const UPDATE_FORM_BASE_URL = "https://docs.google.com/forms/d/e/YOUR_UPDATE_FORM_ID/viewform";
     // const UPDATE_FORM_URL_FIELD_ID = "entry.123456789";
+
+    // Helper to format type values to match Google Form options
+    function formatTypeForForm(type) {
+      const typeMap = {
+        'flood': 'Flood',
+        'earthquake': 'Earthquake',
+        'wildfire': 'Wildfire',
+        'drought': 'Drought',
+        'hurricane': 'Hurricane',
+        'tornado': 'Tornado',
+        'extreme-weather': 'Extreme weather',
+        'other': 'Other'
+      };
+      return typeMap[type] || type;
+    }
 
     // Generate pre-filled update form URL with ALL resource data
     function getUpdateFormURL(resource) {
@@ -306,19 +322,31 @@
       
       // Pre-fill all available fields from the resource
       for (const [resourceField, formEntryId] of Object.entries(FORM_FIELD_MAPPING)) {
-        if (resource[resourceField]) {
-          let value = resource[resourceField];
-          
-          // Handle array types (e.g., disaster types)
-          if (Array.isArray(value)) {
-            value = value.join(', ');
-          }
-          
-          // Handle boolean values
-          if (typeof value === 'boolean') {
-            value = value ? 'Yes' : 'No';
-          }
-          
+        const value = resource[resourceField];
+        
+        // Skip empty/null/undefined values
+        if (value === null || value === undefined || value === '') continue;
+        
+        // Handle array types (e.g., disaster types) - for checkboxes, add multiple entries
+        if (Array.isArray(value)) {
+          value.forEach(item => {
+            if (item) {
+              // Format type values to match form options
+              const formattedItem = resourceField === 'type' ? formatTypeForForm(item) : item;
+              params.append(formEntryId, String(formattedItem));
+            }
+          });
+        }
+        // Handle single type value (not array)
+        else if (resourceField === 'type' && value) {
+          params.append(formEntryId, formatTypeForForm(value));
+        }
+        // Handle boolean values
+        else if (typeof value === 'boolean') {
+          params.append(formEntryId, value ? 'Yes' : 'No');
+        }
+        // Handle regular string/number values
+        else {
           params.append(formEntryId, String(value));
         }
       }
