@@ -35,18 +35,17 @@ jobs:
       with:
         python-version: '3.9'
         
-    - name: Fetch CSV from Google Sheets
+    - name: Check if submissions.csv exists
       run: |
-        if [ -z "${{ secrets.SHEET_CSV_URL }}" ]; then
-          echo "SHEET_CSV_URL secret is not set"; exit 1
+        if [ -f "submissions.csv" ]; then
+          echo "Using existing submissions.csv file"
+          echo "CSV file size: $(wc -c < submissions.csv) bytes"
+          echo "First few lines:"
+          head -3 submissions.csv || true
+        else
+          echo "No submissions.csv file found - skipping ingestion"
+          exit 1
         fi
-        echo "Fetching CSV from: $SHEET_CSV_URL"
-        curl -L -v "$SHEET_CSV_URL" -o submissions.csv
-        echo "CSV file size: $(wc -c < submissions.csv) bytes"
-        echo "First few lines:"
-        head -3 submissions.csv || true
-      env:
-        SHEET_CSV_URL: ${{ secrets.SHEET_CSV_URL }}
         
     - name: Install dependencies
       run: |
