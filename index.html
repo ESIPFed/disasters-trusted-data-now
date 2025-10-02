@@ -84,13 +84,13 @@
     .table-view { display: none; overflow-x: auto; border: 1px solid var(--border); border-radius: 6px; background: var(--white); }
     table { width: 100%; border-collapse: collapse; table-layout: fixed; }
     th { background: var(--bg); padding: .75rem 1rem; text-align: left; font-weight: 600; font-size: .875rem; color: var(--text); border-bottom: 1px solid var(--border); }
-    th:nth-child(1) { width: 20%; } /* Name */
-    th:nth-child(2) { width: 15%; } /* Type(s) */
-    th:nth-child(3) { width: 12%; } /* Accessibility */
-    th:nth-child(4) { width: 20%; } /* Organization */
-    th:nth-child(5) { width: 10%; } /* Link */
-    th:nth-child(6) { width: 10%; text-align: center; } /* Website Status */
-    th:nth-child(7) { width: 13%; text-align: center; } /* Edit */
+    th:nth-child(1) { width: 25%; } /* Name */
+    th:nth-child(2) { width: 18%; } /* Type(s) */
+    th:nth-child(3) { width: 13%; } /* Accessibility */
+    th:nth-child(4) { width: 22%; } /* Organization */
+    th:nth-child(5) { width: 8%; } /* Link */
+    th:nth-child(6) { width: 7%; text-align: center; } /* Website Status */
+    th:nth-child(7) { width: 7%; text-align: center; } /* Edit */
     td { padding: .75rem 1rem; border-bottom: 1px solid var(--border); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     td:first-child { white-space: normal; }
     td:nth-child(2) { white-space: normal; }
@@ -265,36 +265,65 @@
     // OPTION 1: Use your existing submission form (recommended for simplicity)
     // OPTION 2: Create a separate update form (better UX but more work)
     
-    // To get the URL field entry ID for pre-filling and avoid "continue draft" issues:
+    // To get ALL field entry IDs for pre-filling:
     // 1. Open your Google Form in edit mode
     // 2. Click ⋮ (three dots) → "Get pre-filled link"
-    // 3. Fill the URL/Link field with "TEST_URL" (and ONLY this field)
+    // 3. Fill in ALL fields with test values (e.g., "TEST_NAME", "TEST_URL", etc.)
     // 4. Click "Get link" and copy the URL
-    // 5. Extract the entry ID from the URL (e.g., entry.123456789)
-    // 6. Make sure the URL format is: .../viewform?usp=pp_url&entry.XXXXX=value
+    // 5. Extract ALL entry IDs from the URL (e.g., entry.123456789)
+    // 6. Update the FORM_FIELD_MAPPING below with your actual entry IDs
     // 
     // Note: If you see "continue draft?" when clicking edit links:
     // - Clear your browser cookies/cache for Google Forms
-    // - Make sure the entry ID below matches your form's URL field
     // - The usp=pp_url parameter should prevent draft conflicts
     
-    // OPTION 1: Use existing form (just get the entry ID for the URL field)
+    // OPTION 1: Use existing form (map all fields to their entry IDs)
     const UPDATE_FORM_BASE_URL = GOOGLE_FORM_VIEW_URL; // Reuse existing form
-    const UPDATE_FORM_URL_FIELD_ID = "entry.1253715788"; // URL field 
+    
+    // Map resource fields to Google Form entry IDs
+    // Update these with your actual form field entry IDs
+    const FORM_FIELD_MAPPING = {
+      'name': 'entry.1906372411',           // Data Name field
+      'description': 'entry.711428864',      // Description field
+      'url': 'entry.1253715788',            // URL/Link field
+      'organization': 'entry.1831871787',    // Organization field
+      'contact': 'entry.1142518214',        // Contact field
+      'contributorName': 'entry.1970110956', // Contributor Name field
+      'contributorEmail': 'entry.558055174', // Email field (already filled from login)
+      'notes': 'entry.1969582747',          // Notes field
+      'type': 'entry.1382831684',           // Type field (disaster type)
+      // Add more fields as needed
+    }; 
     
     // OPTION 2: Separate update form (uncomment these lines)
     // const UPDATE_FORM_BASE_URL = "https://docs.google.com/forms/d/e/YOUR_UPDATE_FORM_ID/viewform";
     // const UPDATE_FORM_URL_FIELD_ID = "entry.123456789";
 
-    // Generate pre-filled update form URL
-    function getUpdateFormURL(resourceURL) {
-      if (UPDATE_FORM_URL_FIELD_ID === "entry.REPLACE_WITH_YOUR_URL_FIELD_ENTRY_ID") {
-        // Not configured yet - just return the form without pre-fill
-        return UPDATE_FORM_BASE_URL;
+    // Generate pre-filled update form URL with ALL resource data
+    function getUpdateFormURL(resource) {
+      const params = new URLSearchParams();
+      params.append('usp', 'pp_url'); // Indicate pre-populated URL to avoid draft conflicts
+      
+      // Pre-fill all available fields from the resource
+      for (const [resourceField, formEntryId] of Object.entries(FORM_FIELD_MAPPING)) {
+        if (resource[resourceField]) {
+          let value = resource[resourceField];
+          
+          // Handle array types (e.g., disaster types)
+          if (Array.isArray(value)) {
+            value = value.join(', ');
+          }
+          
+          // Handle boolean values
+          if (typeof value === 'boolean') {
+            value = value ? 'Yes' : 'No';
+          }
+          
+          params.append(formEntryId, String(value));
+        }
       }
-      // Add usp=pp_url parameter to indicate this is a pre-populated URL
-      const separator = UPDATE_FORM_BASE_URL.includes('?') ? '&' : '?';
-      return `${UPDATE_FORM_BASE_URL}${separator}usp=pp_url&${UPDATE_FORM_URL_FIELD_ID}=${encodeURIComponent(resourceURL)}`;
+      
+      return `${UPDATE_FORM_BASE_URL}?${params.toString()}`;
     }
 
     // Hook the button to open your form
@@ -372,7 +401,7 @@
         const pubBadge = resource.public ? '<span class="badge badge-public">Public</span>' : '<span class="badge badge-restricted">Restricted</span>';
         const sub = resource.subscription === true ? ' • Subscription' : '';
         const ro = resource.researchOrOps ? ` • ${escapeHTML(resource.researchOrOps)}` : '';
-        const editURL = getUpdateFormURL(resource.url || '');
+        const editURL = getUpdateFormURL(resource);
         return `
           <div class="resource-card">
             <div class="resource-header">
@@ -410,7 +439,7 @@
           }
         }
         
-        const editURL = getUpdateFormURL(resource.url || '');
+        const editURL = getUpdateFormURL(resource);
         
         // Show version if available (v1, v2, v3, etc.)
         const version = resource.version ? ` v${resource.version}` : '';
