@@ -35,17 +35,23 @@ jobs:
       with:
         python-version: '3.9'
         
-    - name: Check if submissions.csv exists
+    - name: Fetch CSV from Google Sheets
       run: |
-        if [ -f "submissions.csv" ]; then
-          echo "Using existing submissions.csv file"
-          echo "CSV file size: $(wc -c < submissions.csv) bytes"
-          echo "First few lines:"
-          head -3 submissions.csv || true
-        else
-          echo "No submissions.csv file found - skipping ingestion"
+        if [ -z "${{ secrets.SHEET_CSV_URL }}" ]; then
+          echo "SHEET_CSV_URL secret is not set"; exit 1
+        fi
+        echo "Fetching CSV from: $SHEET_CSV_URL"
+        curl -L -v "$SHEET_CSV_URL" -o submissions.csv
+        echo "CSV file size: $(wc -c < submissions.csv) bytes"
+        echo "First few lines:"
+        head -3 submissions.csv || true
+        # Check if we got HTML instead of CSV
+        if grep -q "<!DOCTYPE html>" submissions.csv; then
+          echo "ERROR: Got HTML instead of CSV. Check if the Google Sheet is public or the URL is correct."
           exit 1
         fi
+      env:
+        SHEET_CSV_URL: ${{ secrets.SHEET_CSV_URL }}
         
     - name: Install dependencies
       run: |
@@ -53,7 +59,7 @@ jobs:
         
     - name: Run Google Forms ingestion
       run: |
-        python scripts/ingest_google_forms.py data.json data.json submissions.csv
+        python scripts/ingest_google_forms.py submissions.csv data.json data.json
         
     - name: Create Pull Request
       if: github.event_name != 'pull_request'

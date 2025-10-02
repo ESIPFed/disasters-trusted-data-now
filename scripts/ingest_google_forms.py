@@ -15,13 +15,6 @@ from urllib.parse import urlsplit, urlunsplit, parse_qsl, urlencode
 from io import StringIO
 
 try:
-    import gspread
-    from google.oauth2.service_account import Credentials
-    GOOGLE_SHEETS_AVAILABLE = True
-except ImportError:
-    GOOGLE_SHEETS_AVAILABLE = False
-
-try:
     import requests
     REQUESTS_AVAILABLE = True
 except ImportError:
@@ -102,135 +95,58 @@ ALLOWED_TYPES = {
     "flood","earthquake","wildfire","drought","hurricane","tornado","extreme-weather","other"
 }
 
-# ---------- Google Sheets functions ----------
-def fetch_google_sheets_data(sheet_id, credentials_json=None):
-    """Fetch data from Google Sheets (public or private) and return as CSV-like rows."""
-    
-    # Try authenticated access first (for private sheets)
-    if GOOGLE_SHEETS_AVAILABLE and credentials_json:
-        try:
-            if DEBUG:
-                print("Attempting authenticated access to Google Sheets...")
-            
-            # Set up credentials
-            creds = Credentials.from_service_account_info(
-                json.loads(credentials_json),
-                scopes=['https://www.googleapis.com/auth/spreadsheets.readonly']
-            )
-            
-            # Connect to Google Sheets
-            gc = gspread.authorize(creds)
-            sheet = gc.open_by_key(sheet_id).sheet1
-            
-            # Get all values
-            all_values = sheet.get_all_values()
-            
-            if DEBUG:
-                print(f"Fetched {len(all_values)} rows from Google Sheets via API")
-            
-            return all_values
-            
-        except Exception as e:
-            if DEBUG:
-                print(f"Authenticated access failed: {e}")
-            # Fall through to try public access
-    
-    # Try public access (for public sheets)
-    if REQUESTS_AVAILABLE:
-        try:
-            if DEBUG:
-                print("Attempting public access to Google Sheets...")
-            
-            # Try different URL formats for public Google Sheets
-            csv_urls = [
-                f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv&gid=0",
-                f"https://docs.google.com/spreadsheets/d/{sheet_id}/gviz/tq?tqx=out:csv&gid=0",
-                f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv"
-            ]
-            
-            response = None
-            for csv_url in csv_urls:
-                if DEBUG:
-                    print(f"Trying URL: {csv_url}")
-                try:
-                    response = requests.get(csv_url)
-                    if response.status_code == 200:
-                        break
-                except:
-                    continue
-            
-            if not response or response.status_code != 200:
-                raise Exception(f"Could not access Google Sheet. Status: {response.status_code if response else 'No response'}")
-            
-            if DEBUG:
-                print(f"Successfully fetched from: {csv_url}")
-            
-            # Parse CSV content
-            csv_content = response.text
-            csv_reader = csv.reader(StringIO(csv_content))
-            rows = list(csv_reader)
-            
-            if DEBUG:
-                print(f"Fetched {len(rows)} rows from public Google Sheets")
-            
-            return rows
-            
-        except Exception as e:
-            if DEBUG:
-                print(f"Public access failed: {e}")
-    
-    # If both methods failed
-    if not GOOGLE_SHEETS_AVAILABLE and not REQUESTS_AVAILABLE:
-        print("Error: Neither Google Sheets API nor requests library available.")
-        print("Install with: pip install gspread google-auth requests")
+def fetch_google_sheets_data(sheet_id):
+    """Fetch data from public Google Sheets and return as CSV-like rows."""
+    if not REQUESTS_AVAILABLE:
+        print("Error: requests library not available. Install with: pip install requests")
         sys.exit(1)
-    else:
-        print("Error: Could not access Google Sheet with either authenticated or public methods.")
-        print("For private sheets, ensure GOOGLE_SHEETS_CREDENTIALS is set correctly.")
-        print("For public sheets, ensure the sheet is publicly accessible.")
+    
+    try:
+        # Try different URL formats for public Google Sheets
+        csv_urls = [
+            f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv&gid=0",
+            f"https://docs.google.com/spreadsheets/d/{sheet_id}/gviz/tq?tqx=out:csv&gid=0",
+            f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv"
+        ]
+        
+        response = None
+        for csv_url in csv_urls:
+            if DEBUG:
+                print(f"Trying URL: {csv_url}")
+            try:
+                response = requests.get(csv_url)
+                if response.status_code == 200:
+                    break
+            except:
+                continue
+        
+        if not response or response.status_code != 200:
+            raise Exception(f"Could not access Google Sheet. Status: {response.status_code if response else 'No response'}")
+        
+        if DEBUG:
+            print(f"Successfully fetched from: {csv_url}")
+        
+        # Parse CSV content
+        csv_content = response.text
+        csv_reader = csv.reader(StringIO(csv_content))
+        rows = list(csv_reader)
+        
+        if DEBUG:
+            print(f"Fetched {len(rows)} rows from public Google Sheets")
+        
+        return rows
+        
+    except Exception as e:
+        print(f"Error fetching from Google Sheets: {e}")
         sys.exit(1)
-
-def fetch_csv_data(csv_path):
-    """Fetch data from local CSV file."""
-    with open(csv_path, "r", encoding="utf-8") as f:
-        rdr = csv.reader(f)
-        return list(rdr)
 
 # ---------- main ----------
 def main():
-    if len(sys.argv) < 3:
-        print("usage: ingest_google_forms.py <data_json_in> <data_json_out> [csv_file_or_sheet_id]")
-        print("  - If csv_file_or_sheet_id is a file path: reads from CSV")
-        print("  - If csv_file_or_sheet_id is a Google Sheets ID: fetches from Google Sheets")
-        print("  - If omitted: uses GOOGLE_SHEETS_ID environment variable")
+    if len(sys.argv) < 4:
+        print("usage: ingest_google_forms.py <csv_in> <data_json_in> <data_json_out>")
         sys.exit(2)
 
-    data_in, data_out = sys.argv[1], sys.argv[2]
-    
-    # Determine data source
-    if len(sys.argv) >= 4:
-        source = sys.argv[3]
-    else:
-        source = os.environ.get("GOOGLE_SHEETS_ID")
-        if not source:
-            print("Error: No data source specified. Provide CSV file, Google Sheets ID, or set GOOGLE_SHEETS_ID environment variable")
-            sys.exit(1)
-    
-    # Fetch data based on source type
-    if source.endswith('.csv') or '/' in source or '\\' in source:
-        # Treat as CSV file path
-        if not os.path.exists(source):
-            print(f"Error: CSV file not found: {source}")
-            sys.exit(1)
-        rows = fetch_csv_data(source)
-        if DEBUG:
-            print(f"Reading from CSV file: {source}")
-    else:
-        # Treat as Google Sheets ID
-        credentials_json = os.environ.get("GOOGLE_SHEETS_CREDENTIALS")
-        rows = fetch_google_sheets_data(source, credentials_json)
-        if DEBUG:
-            print(f"Reading from Google Sheets ID: {source}")
+    csv_path, data_in, data_out = sys.argv[1], sys.argv[2], sys.argv[3]
 
     # Load existing JSON
     with open(data_in, "r", encoding="utf-8") as f:
@@ -250,8 +166,26 @@ def main():
             existing_urls.add(u)
             existing_by_url[u] = r
 
+    # Determine data source and fetch rows
+    rows = []
+    if csv_path and os.path.exists(csv_path):
+        # Read from local CSV file
+        with open(csv_path, "r", encoding="utf-8") as f:
+            rdr = csv.reader(f)
+            rows = list(rdr)
+        if DEBUG:
+            print(f"Loaded {len(rows)} rows from local CSV: {csv_path}")
+    else:
+        # Try to fetch from Google Sheets using sheet ID from environment
+        sheet_id = os.environ.get("GOOGLE_SHEETS_ID")
+        if sheet_id:
+            rows = fetch_google_sheets_data(sheet_id)
+        else:
+            print("Error: No data source specified. Provide CSV file, Google Sheets ID, or set GOOGLE_SHEETS_ID environment variable")
+            sys.exit(1)
+
     if not rows:
-        print("empty CSV")
+        print("No data to process")
         with open(data_out, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=2)
         return
@@ -295,7 +229,6 @@ def main():
             if other: other_texts.append(other)
             if tok in ALLOWED_TYPES:
                 normalized_types.append(tok)
-            # tolerate legacy tokens that normalize to allowed via alias above
 
         # Deduplicate and keep order
         seen = set()
@@ -349,31 +282,23 @@ def main():
             # Preserve accessibility data if it exists
             if "accessible" in existing_res:
                 res["accessible"] = existing_res["accessible"]
-            if "lastChecked" in existing_res:
-                res["lastChecked"] = existing_res["lastChecked"]
-            if "accessibilityStatus" in existing_res:
-                res["accessibilityStatus"] = existing_res["accessibilityStatus"]
-            if "accessibilityError" in existing_res:
-                res["accessibilityError"] = existing_res["accessibilityError"]
+            if "accessibility_checked" in existing_res:
+                res["accessibility_checked"] = existing_res["accessibility_checked"]
+            if "accessibility_notes" in existing_res:
+                res["accessibility_notes"] = existing_res["accessibility_notes"]
             
             new_data.append(res)
             updated += 1
-            if DEBUG:
-                print(f"Updated resource: {res['name']}")
         else:
             # New resource
             new_data.append(res)
             added += 1
-            if DEBUG:
-                print(f"Added new resource: {res['name']}")
 
     # Find resources that were removed from Google Sheets
     removed = 0
     for url_norm, existing_res in existing_by_url.items():
         if url_norm not in processed_urls:
             removed += 1
-            if DEBUG:
-                print(f"Removed resource: {existing_res.get('name', 'Unknown')}")
 
     # Update the data with new/updated resources
     data = new_data
