@@ -82,12 +82,12 @@
     .table-view { display: none; overflow-x: auto; border: 1px solid var(--border); border-radius: 6px; background: var(--white); }
     table { width: 100%; border-collapse: collapse; table-layout: fixed; }
     th { background: var(--bg); padding: .75rem 1rem; text-align: left; font-weight: 600; font-size: .875rem; color: var(--text); border-bottom: 1px solid var(--border); }
-    th:nth-child(1) { width: 30%; } /* Name - largest column */
-    th:nth-child(2) { width: 20%; } /* Type(s) */
-    th:nth-child(3) { width: 22.5%; } /* Status */
-    th:nth-child(4) { width: 20%; } /* Organization */
-    th:nth-child(5) { width: 10%; } /* Link */
-    th:nth-child(6) { width: 7.5%; text-align: center; } /* Status */
+    th:nth-child(1) { width: 28%; } /* Name - largest column */
+    th:nth-child(2) { width: 18%; } /* Type(s) */
+    th:nth-child(3) { width: 20%; } /* Status */
+    th:nth-child(4) { width: 18%; } /* Organization */
+    th:nth-child(5) { width: 8%; } /* Link */
+    th:nth-child(6) { width: 10%; text-align: center; } /* Accessibility */
     td { padding: .75rem 1rem; border-bottom: 1px solid var(--border); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     td:first-child { white-space: normal; }
     td:nth-child(2) { white-space: normal; }
@@ -242,7 +242,7 @@
               <th>Status</th>
               <th>Organization</th>
               <th>Link</th>
-              <th>Status</th>
+              <th>Accessibility</th>
             </tr>
           </thead>
           <tbody id="tableBody"></tbody>
