@@ -10,17 +10,17 @@ on:
       - 'scripts/ingest_google_forms.py'
       - 'data.json'
 
-# Note: This workflow fetches data directly from Google Sheets (public or private).
+# Note: This workflow fetches data directly from Google Sheets using CSV export URL.
 # 
 # Required GitHub Secrets:
-# - GOOGLE_SHEETS_ID: The ID of your Google Sheet (from the URL)
-# - GOOGLE_SHEETS_CREDENTIALS: Service account credentials JSON (for private sheets)
+# - SHEET_CSV_URL: The CSV export URL from your Google Sheet
 # 
 # To set up:
-# 1. Create a Google Cloud service account and enable Google Sheets API
-# 2. Share your Google Sheet with the service account email
-# 3. Add the credentials JSON as a GitHub secret
-# 4. For public sheets, GOOGLE_SHEETS_CREDENTIALS can be omitted
+# 1. Go to your Google Sheet
+# 2. Click File → Download → Comma-separated values (.csv)
+# 3. Copy the download URL from your browser's network tab, or use:
+#    https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID/export?format=csv&gid=0
+# 4. Add the URL as a GitHub secret named SHEET_CSV_URL
 
 jobs:
   ingest-forms:
@@ -35,16 +35,22 @@ jobs:
       with:
         python-version: '3.9'
         
+    - name: Fetch CSV from Google Sheets
+      run: |
+        if [ -z "${{ secrets.SHEET_CSV_URL }}" ]; then
+          echo "SHEET_CSV_URL secret is not set"; exit 1
+        fi
+        curl -L "$SHEET_CSV_URL" -o submissions.csv
+      env:
+        SHEET_CSV_URL: ${{ secrets.SHEET_CSV_URL }}
+        
     - name: Install dependencies
       run: |
         pip install -r requirements.txt
         
     - name: Run Google Forms ingestion
-      env:
-        GOOGLE_SHEETS_ID: ${{ secrets.GOOGLE_SHEETS_ID }}
-        GOOGLE_SHEETS_CREDENTIALS: ${{ secrets.GOOGLE_SHEETS_CREDENTIALS }}
       run: |
-        python scripts/ingest_google_forms.py data.json data.json
+        python scripts/ingest_google_forms.py data.json data.json submissions.csv
         
     - name: Commit and push changes
       if: github.event_name != 'pull_request'
