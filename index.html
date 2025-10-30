@@ -380,6 +380,46 @@
       return [String(t)];
     }
 
+    // Deduplicate resources by URL, keeping the most recent version
+    function deduplicateResources(resourceList) {
+      const urlMap = new Map();
+      
+      // Process each resource
+      resourceList.forEach((resource, index) => {
+        const url = resource.url?.trim();
+        
+        // Skip resources without URLs
+        if (!url) {
+          console.warn('Resource without URL found:', resource.name);
+          return;
+        }
+        
+        // Check if we've seen this URL before
+        if (urlMap.has(url)) {
+          const existing = urlMap.get(url);
+          // Increment version number
+          existing.version = (existing.version || 1) + 1;
+          // Update with newer data (last one wins)
+          urlMap.set(url, { ...resource, version: existing.version });
+        } else {
+          // First occurrence - version 1 (but don't show v1)
+          urlMap.set(url, { ...resource, version: 1 });
+        }
+      });
+      
+      // Convert map back to array
+      const deduplicated = Array.from(urlMap.values());
+      
+      // Log deduplication stats
+      const originalCount = resourceList.length;
+      const uniqueCount = deduplicated.length;
+      if (originalCount > uniqueCount) {
+        console.log(`Deduplicated: ${originalCount} entries → ${uniqueCount} unique resources (${originalCount - uniqueCount} duplicates removed)`);
+      }
+      
+      return deduplicated;
+    }
+
     async function loadResources() {
       const loading = document.getElementById('loadingState');
       const cardView = document.getElementById('cardView');
@@ -395,8 +435,12 @@
         const res = await fetch('data.json?cb=' + Date.now(), { cache: 'no-store' });
         if (!res.ok) throw new Error('HTTP ' + res.status);
         const data = await res.json();
-        resources = Array.isArray(data) ? data : [];
+        const rawResources = Array.isArray(data) ? data : [];
+        
+        // Deduplicate resources by URL
+        resources = deduplicateResources(rawResources);
         filteredResources = [...resources];
+        
         renderResources();
         setView(currentView);
         loading.style.display = 'none';
@@ -469,8 +513,8 @@
         
         const editURL = getUpdateFormURL(resource);
         
-        // Show version if available (v1, v2, v3, etc.)
-        const version = resource.version ? ` v${resource.version}` : '';
+        // Show version only if edited (v2, v3, etc.) - don't show v1
+        const version = (resource.version && resource.version > 1) ? ` v${resource.version}` : '';
         
         return `
           <tr>
@@ -480,7 +524,7 @@
             <td>${escapeHTML(resource.organization || '—')}</td>
             <td><a href="${escapeAttr(resource.url || '#')}" target="_blank" rel="noopener noreferrer" class="resource-link">View →</a></td>
             <td>${linkStatus}</td>
-            <td><a href="${escapeAttr(editURL)}" target="_blank" rel="noopener noreferrer" class="edit-link" title="Edit resource">✏️${version}</a></td>
+            <td><a href="${escapeAttr(editURL)}" target="_blank" rel="noopener noreferrer" class="edit-link" title="Edit resource${version ? ' (' + version.trim() + ')' : ''}">✏️${version}</a></td>
           </tr>
         `;
       }).join('');
