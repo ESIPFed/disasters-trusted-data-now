@@ -279,13 +279,15 @@ def main():
         if url_norm in existing_by_url:
             # Update existing resource
             existing_res = existing_by_url[url_norm]
-            # Preserve accessibility data if it exists
+            # Preserve accessibility data if it exists (fields from check_accessibility.py)
             if "accessible" in existing_res:
                 res["accessible"] = existing_res["accessible"]
-            if "accessibility_checked" in existing_res:
-                res["accessibility_checked"] = existing_res["accessibility_checked"]
-            if "accessibility_notes" in existing_res:
-                res["accessibility_notes"] = existing_res["accessibility_notes"]
+            if "lastChecked" in existing_res:
+                res["lastChecked"] = existing_res["lastChecked"]
+            if "accessibilityStatus" in existing_res:
+                res["accessibilityStatus"] = existing_res["accessibilityStatus"]
+            if "accessibilityError" in existing_res:
+                res["accessibilityError"] = existing_res["accessibilityError"]
             
             new_data.append(res)
             updated += 1
