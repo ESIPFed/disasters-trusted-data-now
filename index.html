@@ -84,21 +84,23 @@
     .table-view { display: none; overflow-x: auto; border: 1px solid var(--border); border-radius: 6px; background: var(--white); }
     table { width: 100%; border-collapse: collapse; table-layout: fixed; }
     th { background: var(--bg); padding: .75rem 1rem; text-align: left; font-weight: 600; font-size: .875rem; color: var(--text); border-bottom: 1px solid var(--border); }
-    th:nth-child(1) { width: 25%; } /* Name */
-    th:nth-child(2) { width: 18%; } /* Type(s) */
-    th:nth-child(3) { width: 13%; } /* Accessibility */
-    th:nth-child(4) { width: 22%; } /* Organization */
-    th:nth-child(5) { width: 8%; } /* Link */
-    th:nth-child(6) { width: 7%; text-align: center; } /* Website Status */
-    th:nth-child(7) { width: 7%; text-align: center; } /* Edit */
+    th:nth-child(1) { width: 22%; } /* Name */
+    th:nth-child(2) { width: 16%; } /* Type(s) */
+    th:nth-child(3) { width: 11%; } /* Accessibility */
+    th:nth-child(4) { width: 8%; text-align: center; } /* Activity */
+    th:nth-child(5) { width: 20%; } /* Organization */
+    th:nth-child(6) { width: 7%; } /* Link */
+    th:nth-child(7) { width: 7%; text-align: center; } /* Website Status */
+    th:nth-child(8) { width: 9%; text-align: center; } /* Edit */
     td { padding: .75rem 1rem; border-bottom: 1px solid var(--border); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     td:first-child { white-space: normal; }
     td:nth-child(2) { white-space: normal; }
-    td:nth-child(4) { white-space: normal; }
+    td:nth-child(5) { white-space: normal; }
     td:nth-child(3) { white-space: nowrap; } /* Accessibility column */
-    td:nth-child(5) { white-space: nowrap; } /* Link column */
-    td:nth-child(6) { white-space: nowrap; text-align: center; } /* Website Status column */
-    td:nth-child(7) { white-space: nowrap; text-align: center; } /* Edit column */
+    td:nth-child(4) { white-space: nowrap; text-align: center; } /* Activity column */
+    td:nth-child(6) { white-space: nowrap; } /* Link column */
+    td:nth-child(7) { white-space: nowrap; text-align: center; } /* Website Status column */
+    td:nth-child(8) { white-space: nowrap; text-align: center; } /* Edit column */
     .status-working { color: var(--success); font-weight: bold; }
     .status-warning { color: #f59e0b; font-weight: bold; }
 
@@ -240,6 +242,7 @@
               <th>Name</th>
               <th>Type(s)</th>
               <th>Accessibility</th>
+              <th>Activity</th>
               <th>Organization</th>
               <th>Link</th>
               <th>Website Status</th>
@@ -516,11 +519,17 @@
         // Show version only if edited (v2, v3, etc.) - don't show v1
         const version = (resource.version && resource.version > 1) ? ` v${resource.version}` : '';
         
+        // Active status badge
+        const activeBadge = resource.active 
+          ? '<span class="badge badge-active">Active</span>' 
+          : '<span class="badge badge-inactive">Inactive</span>';
+        
         return `
           <tr>
             <td><strong>${escapeHTML(resource.name || 'Untitled')}</strong></td>
             <td>${labels.map(l => `<span class="type-tag">${escapeHTML(l)}</span>`).join(' ')}</td>
             <td>${pubBadge}</td>
+            <td>${activeBadge}</td>
             <td>${escapeHTML(resource.organization || '—')}</td>
             <td><a href="${escapeAttr(resource.url || '#')}" target="_blank" rel="noopener noreferrer" class="resource-link">View →</a></td>
             <td>${linkStatus}</td>
