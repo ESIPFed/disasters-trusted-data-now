@@ -14,7 +14,7 @@
     "active": true,
     "type": "other",
     "accessible": false,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 400,
     "accessibilityError": "HTTP 400"
   },
@@ -33,8 +33,8 @@
     "active": true,
     "type": "earthquake",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
-    "accessibilityStatus": 200
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
+    "accessibilityStatus": 202
   },
   {
     "name": "IFRC GO Platform",
@@ -51,8 +51,8 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
-    "accessibilityStatus": 202
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
+    "accessibilityStatus": 200
   },
   {
     "name": "U.S. Drought Monitor",
@@ -68,9 +68,10 @@
     "public": true,
     "active": true,
     "type": "drought",
-    "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
-    "accessibilityStatus": 200
+    "accessible": false,
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
+    "accessibilityStatus": 0,
+    "accessibilityError": "Connection Error"
   },
   {
     "name": "Planscape",
@@ -87,7 +88,7 @@
     "active": true,
     "type": "wildfire",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -105,7 +106,7 @@
     "active": true,
     "type": "earthquake",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -123,7 +124,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -141,7 +142,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -159,7 +160,7 @@
     "active": true,
     "type": "flood",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -177,7 +178,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -194,10 +195,9 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": false,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
-    "accessibilityStatus": 0,
-    "accessibilityError": "Connection Error"
+    "accessible": true,
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
+    "accessibilityStatus": 200
   },
   {
     "name": "MapAction Maps & Data Hub",
@@ -214,7 +214,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -232,7 +232,7 @@
     "active": true,
     "type": "extreme-weather",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -250,7 +250,7 @@
     "active": true,
     "type": "earthquake",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -268,7 +268,7 @@
     "active": true,
     "type": "earthquake",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -286,7 +286,7 @@
     "active": true,
     "type": "earthquake",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -304,7 +304,7 @@
     "active": true,
     "type": "earthquake",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -322,7 +322,7 @@
     "active": true,
     "type": "earthquake",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -340,7 +340,7 @@
     "active": true,
     "type": "extreme-weather",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -358,9 +358,9 @@
     "active": true,
     "type": "other",
     "accessible": false,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
-    "accessibilityStatus": 403,
-    "accessibilityError": "HTTP 403"
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
+    "accessibilityStatus": 404,
+    "accessibilityError": "HTTP 404"
   },
   {
     "name": "JMA Tsunami & Earthquake Information",
@@ -376,9 +376,10 @@
     "public": true,
     "active": true,
     "type": "earthquake",
-    "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
-    "accessibilityStatus": 200
+    "accessible": false,
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
+    "accessibilityStatus": 403,
+    "accessibilityError": "HTTP 403"
   },
   {
     "name": "USGS Volcano Hazards Program",
@@ -395,7 +396,7 @@
     "active": true,
     "type": "extreme-weather",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -412,10 +413,9 @@
     "public": true,
     "active": true,
     "type": "extreme-weather",
-    "accessible": false,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
-    "accessibilityStatus": 404,
-    "accessibilityError": "HTTP 404"
+    "accessible": true,
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
+    "accessibilityStatus": 200
   },
   {
     "name": "Smithsonian Global Volcanism Program (GVP)",
@@ -432,7 +432,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -449,9 +449,10 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
-    "accessibilityStatus": 200
+    "accessible": false,
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
+    "accessibilityStatus": 0,
+    "accessibilityError": "Connection Error"
   },
   {
     "name": "NOAA National Hurricane Center (NHC)",
@@ -468,7 +469,7 @@
     "active": true,
     "type": "hurricane",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -486,7 +487,7 @@
     "active": true,
     "type": "hurricane",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -504,7 +505,7 @@
     "active": true,
     "type": "hurricane",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -522,7 +523,7 @@
     "active": true,
     "type": "hurricane",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -540,7 +541,7 @@
     "active": true,
     "type": "hurricane",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -557,10 +558,9 @@
     "public": true,
     "active": true,
     "type": "wildfire",
-    "accessible": false,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
-    "accessibilityStatus": 0,
-    "accessibilityError": "Connection Error"
+    "accessible": true,
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
+    "accessibilityStatus": 200
   },
   {
     "name": "EFFIS – European Forest Fire Information System",
@@ -577,7 +577,7 @@
     "active": true,
     "type": "wildfire",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -595,7 +595,7 @@
     "active": true,
     "type": "wildfire",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -613,7 +613,7 @@
     "active": true,
     "type": "wildfire",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -631,7 +631,7 @@
     "active": true,
     "type": "wildfire",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -649,7 +649,7 @@
     "active": true,
     "type": "flood",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -667,7 +667,7 @@
     "active": true,
     "type": "flood",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -685,7 +685,7 @@
     "active": true,
     "type": "flood",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -703,7 +703,7 @@
     "active": true,
     "type": "flood",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -721,7 +721,7 @@
     "active": true,
     "type": "flood",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -739,7 +739,7 @@
     "active": true,
     "type": "flood",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -757,7 +757,7 @@
     "active": true,
     "type": "extreme-weather",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -775,7 +775,7 @@
     "active": true,
     "type": "extreme-weather",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -793,7 +793,7 @@
     "active": true,
     "type": "wildfire",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -811,7 +811,7 @@
     "active": true,
     "type": "extreme-weather",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -829,7 +829,7 @@
     "active": true,
     "type": "extreme-weather",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -847,7 +847,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -864,10 +864,9 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": false,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
-    "accessibilityStatus": 0,
-    "accessibilityError": "Connection Error"
+    "accessible": true,
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
+    "accessibilityStatus": 200
   },
   {
     "name": "USGS EarthExplorer (Landsat, others)",
@@ -884,7 +883,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -901,9 +900,10 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
-    "accessibilityStatus": 200
+    "accessible": false,
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
+    "accessibilityStatus": 0,
+    "accessibilityError": "Connection Error"
   },
   {
     "name": "Maxar Open Data Program",
@@ -920,7 +920,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -938,7 +938,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -956,7 +956,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -974,8 +974,8 @@
     "active": true,
     "type": "extreme-weather",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
-    "accessibilityStatus": 200
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
+    "accessibilityStatus": 202
   },
   {
     "name": "WorldPop",
@@ -992,8 +992,8 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
-    "accessibilityStatus": 202
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
+    "accessibilityStatus": 200
   },
   {
     "name": "Global Human Settlement Layer (GHSL)",
@@ -1010,7 +1010,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1028,7 +1028,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1046,7 +1046,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1064,7 +1064,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1082,7 +1082,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1100,7 +1100,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1118,7 +1118,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1136,7 +1136,7 @@
     "active": true,
     "type": "other",
     "accessible": false,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 403,
     "accessibilityError": "HTTP 403"
   },
@@ -1154,10 +1154,9 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": false,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
-    "accessibilityStatus": 403,
-    "accessibilityError": "HTTP 403"
+    "accessible": true,
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
+    "accessibilityStatus": 200
   },
   {
     "name": "HIFLD Open (ArcGIS Hub)",
@@ -1174,7 +1173,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1192,7 +1191,7 @@
     "active": true,
     "type": "flood",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1210,7 +1209,7 @@
     "active": true,
     "type": "other",
     "accessible": false,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 403,
     "accessibilityError": "HTTP 403"
   },
@@ -1229,7 +1228,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1247,7 +1246,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1264,9 +1263,10 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
-    "accessibilityStatus": 200
+    "accessible": false,
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
+    "accessibilityStatus": 403,
+    "accessibilityError": "HTTP 403"
   },
   {
     "name": "PowerOutage REST API (Products)",
@@ -1283,7 +1283,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1301,7 +1301,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1319,7 +1319,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1337,7 +1337,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1355,7 +1355,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1373,7 +1373,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1390,10 +1390,9 @@
     "public": true,
     "active": true,
     "type": "extreme-weather",
-    "accessible": false,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
-    "accessibilityStatus": 0,
-    "accessibilityError": "Connection Error"
+    "accessible": true,
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
+    "accessibilityStatus": 200
   },
   {
     "name": "511 Wisconsin Developers",
@@ -1410,7 +1409,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1428,7 +1427,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1445,9 +1444,10 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
-    "accessibilityStatus": 200
+    "accessible": false,
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
+    "accessibilityStatus": 0,
+    "accessibilityError": "Connection Error"
   },
   {
     "name": "WHO Health Emergency Dashboard",
@@ -1464,7 +1464,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1482,7 +1482,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1500,7 +1500,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1518,7 +1518,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1536,7 +1536,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1554,7 +1554,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1572,7 +1572,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1590,7 +1590,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1608,7 +1608,7 @@
     "active": true,
     "type": "extreme-weather",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1626,7 +1626,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1644,7 +1644,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1662,7 +1662,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1680,7 +1680,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1698,7 +1698,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1716,7 +1716,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1734,7 +1734,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1752,7 +1752,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1770,7 +1770,7 @@
     "active": true,
     "type": "tornado",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1788,7 +1788,7 @@
     "active": true,
     "type": "extreme-weather",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1806,7 +1806,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1824,7 +1824,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1842,7 +1842,7 @@
     "active": true,
     "type": "flood",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1860,7 +1860,7 @@
     "active": true,
     "type": "tornado",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1878,7 +1878,7 @@
     "active": true,
     "type": "tornado",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1896,7 +1896,7 @@
     "active": true,
     "type": "tornado",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1914,7 +1914,7 @@
     "active": true,
     "type": "extreme-weather",
     "accessible": false,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 0,
     "accessibilityError": "Connection Error"
   },
@@ -1933,7 +1933,7 @@
     "active": true,
     "type": "extreme-weather",
     "accessible": true,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1951,7 +1951,7 @@
     "active": true,
     "type": "wildfire",
     "accessible": false,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 503,
     "accessibilityError": "HTTP 503"
   },
@@ -1970,7 +1970,7 @@
     "active": true,
     "type": "other",
     "accessible": false,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 404,
     "accessibilityError": "HTTP 404"
   },
@@ -1989,7 +1989,7 @@
     "active": true,
     "type": "other",
     "accessible": false,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 0,
     "accessibilityError": "Timeout"
   },
@@ -2008,7 +2008,7 @@
     "active": true,
     "type": "other",
     "accessible": false,
-    "lastChecked": "2025-11-08T02:56:46.876324+00:00",
+    "lastChecked": "2025-11-09T03:06:48.990880+00:00",
     "accessibilityStatus": 0,
     "accessibilityError": "Timeout"
   }
