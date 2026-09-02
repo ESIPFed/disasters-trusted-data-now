@@ -14,7 +14,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -32,8 +32,8 @@
     "active": true,
     "type": "earthquake",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
-    "accessibilityStatus": 200
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
+    "accessibilityStatus": 202
   },
   {
     "name": "IFRC GO Platform",
@@ -49,9 +49,10 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
-    "accessibilityStatus": 200
+    "accessible": false,
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
+    "accessibilityStatus": 0,
+    "accessibilityError": "Connection Error"
   },
   {
     "name": "U.S. Drought Monitor",
@@ -68,7 +69,7 @@
     "active": true,
     "type": "drought",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -86,8 +87,8 @@
     "active": true,
     "type": "wildfire",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
-    "accessibilityStatus": 202
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
+    "accessibilityStatus": 200
   },
   {
     "name": "USGS Earthquake Catalog API",
@@ -103,10 +104,9 @@
     "public": true,
     "active": true,
     "type": "earthquake",
-    "accessible": false,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
-    "accessibilityStatus": 400,
-    "accessibilityError": "HTTP 400"
+    "accessible": true,
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
+    "accessibilityStatus": 200
   },
   {
     "name": "OpenTopography - High Resolution Topography Datasets",
@@ -125,9 +125,10 @@
       "earthquake",
       "wildfire"
     ],
-    "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
-    "accessibilityStatus": 200
+    "accessible": false,
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
+    "accessibilityStatus": 400,
+    "accessibilityError": "HTTP 400"
   },
   {
     "name": "HIFLD archive as geoparquet",
@@ -152,7 +153,7 @@
       "extreme-weather"
     ],
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -176,10 +177,9 @@
       "tornado",
       "extreme-weather"
     ],
-    "accessible": false,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
-    "accessibilityStatus": 0,
-    "accessibilityError": "Connection Error"
+    "accessible": true,
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
+    "accessibilityStatus": 200
   },
   {
     "name": "Wildfire EGP",
@@ -195,9 +195,10 @@
     "public": true,
     "active": true,
     "type": "wildfire",
-    "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
-    "accessibilityStatus": 200
+    "accessible": false,
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
+    "accessibilityStatus": 0,
+    "accessibilityError": "Connection Error"
   },
   {
     "name": "ReliefWeb API",
@@ -214,7 +215,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -231,10 +232,9 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": false,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
-    "accessibilityStatus": 0,
-    "accessibilityError": "Connection Error"
+    "accessible": true,
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
+    "accessibilityStatus": 200
   },
   {
     "name": "Copernicus Emergency Management Service (EMS) – Rapid Mapping",
@@ -250,9 +250,10 @@
     "public": true,
     "active": true,
     "type": "flood",
-    "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
-    "accessibilityStatus": 200
+    "accessible": false,
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
+    "accessibilityStatus": 403,
+    "accessibilityError": "HTTP 403"
   },
   {
     "name": "UNOSAT (UNITAR) Rapid Mapping",
@@ -269,7 +270,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -286,10 +287,9 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": false,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
-    "accessibilityStatus": 403,
-    "accessibilityError": "HTTP 403"
+    "accessible": true,
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
+    "accessibilityStatus": 200
   },
   {
     "name": "MapAction Maps & Data Hub",
@@ -306,7 +306,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -324,7 +324,7 @@
     "active": true,
     "type": "extreme-weather",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -341,10 +341,9 @@
     "public": true,
     "active": true,
     "type": "earthquake",
-    "accessible": false,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
-    "accessibilityStatus": 0,
-    "accessibilityError": "Connection Error"
+    "accessible": true,
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
+    "accessibilityStatus": 200
   },
   {
     "name": "USGS ShakeMap",
@@ -361,7 +360,7 @@
     "active": true,
     "type": "earthquake",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -378,9 +377,10 @@
     "public": true,
     "active": true,
     "type": "earthquake",
-    "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
-    "accessibilityStatus": 200
+    "accessible": false,
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
+    "accessibilityStatus": 0,
+    "accessibilityError": "Connection Error"
   },
   {
     "name": "EMSC Real-time Earthquake Data",
@@ -397,7 +397,7 @@
     "active": true,
     "type": "earthquake",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -414,9 +414,10 @@
     "public": true,
     "active": true,
     "type": "earthquake",
-    "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
-    "accessibilityStatus": 200
+    "accessible": false,
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
+    "accessibilityStatus": 403,
+    "accessibilityError": "HTTP 403"
   },
   {
     "name": "NOAA NWS Tsunami Warning Centers (PTWC, NTWC)",
@@ -432,10 +433,9 @@
     "public": true,
     "active": true,
     "type": "extreme-weather",
-    "accessible": false,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
-    "accessibilityStatus": 403,
-    "accessibilityError": "HTTP 403"
+    "accessible": true,
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
+    "accessibilityStatus": 200
   },
   {
     "name": "IOC Sea Level Station Monitoring Facility",
@@ -452,7 +452,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -470,7 +470,7 @@
     "active": true,
     "type": "earthquake",
     "accessible": false,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 403,
     "accessibilityError": "HTTP 403"
   },
@@ -489,7 +489,7 @@
     "active": true,
     "type": "extreme-weather",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -506,10 +506,9 @@
     "public": true,
     "active": true,
     "type": "extreme-weather",
-    "accessible": false,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
-    "accessibilityStatus": 404,
-    "accessibilityError": "HTTP 404"
+    "accessible": true,
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
+    "accessibilityStatus": 200
   },
   {
     "name": "Smithsonian Global Volcanism Program (GVP)",
@@ -525,9 +524,10 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
-    "accessibilityStatus": 200
+    "accessible": false,
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
+    "accessibilityStatus": 404,
+    "accessibilityError": "HTTP 404"
   },
   {
     "name": "NOAA NCEI Global Volcano Locations",
@@ -544,7 +544,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -562,7 +562,7 @@
     "active": true,
     "type": "hurricane",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -580,7 +580,7 @@
     "active": true,
     "type": "hurricane",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -598,7 +598,7 @@
     "active": true,
     "type": "hurricane",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -616,7 +616,7 @@
     "active": true,
     "type": "hurricane",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -634,7 +634,7 @@
     "active": true,
     "type": "hurricane",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -652,7 +652,7 @@
     "active": true,
     "type": "wildfire",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -670,7 +670,7 @@
     "active": true,
     "type": "wildfire",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -688,7 +688,7 @@
     "active": true,
     "type": "wildfire",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -705,10 +705,9 @@
     "public": true,
     "active": true,
     "type": "wildfire",
-    "accessible": false,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
-    "accessibilityStatus": 0,
-    "accessibilityError": "Connection Error"
+    "accessible": true,
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
+    "accessibilityStatus": 200
   },
   {
     "name": "NIFC Open Data",
@@ -724,9 +723,10 @@
     "public": true,
     "active": true,
     "type": "wildfire",
-    "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
-    "accessibilityStatus": 200
+    "accessible": false,
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
+    "accessibilityStatus": 0,
+    "accessibilityError": "Connection Error"
   },
   {
     "name": "GloFAS – Global Flood Awareness System",
@@ -743,7 +743,7 @@
     "active": true,
     "type": "flood",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -761,7 +761,7 @@
     "active": true,
     "type": "flood",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -779,7 +779,7 @@
     "active": true,
     "type": "flood",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -797,7 +797,7 @@
     "active": true,
     "type": "flood",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -815,7 +815,7 @@
     "active": true,
     "type": "flood",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -833,7 +833,7 @@
     "active": true,
     "type": "flood",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -851,7 +851,7 @@
     "active": true,
     "type": "extreme-weather",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -869,7 +869,7 @@
     "active": true,
     "type": "extreme-weather",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -887,7 +887,7 @@
     "active": true,
     "type": "wildfire",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -905,7 +905,7 @@
     "active": true,
     "type": "extreme-weather",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -922,9 +922,10 @@
     "public": true,
     "active": true,
     "type": "extreme-weather",
-    "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
-    "accessibilityStatus": 200
+    "accessible": false,
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
+    "accessibilityStatus": 404,
+    "accessibilityError": "HTTP 404"
   },
   {
     "name": "NASA Worldview (EOSDIS)",
@@ -941,7 +942,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -959,7 +960,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -977,7 +978,7 @@
     "active": true,
     "type": "other",
     "accessible": false,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 403,
     "accessibilityError": "HTTP 403"
   },
@@ -996,7 +997,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1013,10 +1014,9 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": false,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
-    "accessibilityStatus": 404,
-    "accessibilityError": "HTTP 404"
+    "accessible": true,
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
+    "accessibilityStatus": 200
   },
   {
     "name": "OpenAerialMap",
@@ -1033,8 +1033,8 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
-    "accessibilityStatus": 200
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
+    "accessibilityStatus": 202
   },
   {
     "name": "NASA ARIA Damage Proxy Maps",
@@ -1051,7 +1051,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1069,8 +1069,8 @@
     "active": true,
     "type": "extreme-weather",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
-    "accessibilityStatus": 202
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
+    "accessibilityStatus": 200
   },
   {
     "name": "WorldPop",
@@ -1087,7 +1087,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1105,7 +1105,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1122,9 +1122,10 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
-    "accessibilityStatus": 200
+    "accessible": false,
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
+    "accessibilityStatus": 503,
+    "accessibilityError": "HTTP 503"
   },
   {
     "name": "Microsoft Building Footprints (Open Data)",
@@ -1141,7 +1142,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1158,10 +1159,9 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": false,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
-    "accessibilityStatus": 503,
-    "accessibilityError": "HTTP 503"
+    "accessible": true,
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
+    "accessibilityStatus": 200
   },
   {
     "name": "OSM – Overpass API",
@@ -1178,7 +1178,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1196,7 +1196,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1214,7 +1214,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1231,10 +1231,9 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": false,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
-    "accessibilityStatus": 403,
-    "accessibilityError": "HTTP 403"
+    "accessible": true,
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
+    "accessibilityStatus": 200
   },
   {
     "name": "EIA Open Data (Electric System Operating Data)",
@@ -1250,10 +1249,9 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": false,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
-    "accessibilityStatus": 403,
-    "accessibilityError": "HTTP 403"
+    "accessible": true,
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
+    "accessibilityStatus": 200
   },
   {
     "name": "HIFLD Open (ArcGIS Hub)",
@@ -1270,7 +1268,7 @@
     "active": true,
     "type": "other",
     "accessible": false,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 403,
     "accessibilityError": "HTTP 403"
   },
@@ -1288,9 +1286,10 @@
     "public": true,
     "active": true,
     "type": "flood",
-    "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
-    "accessibilityStatus": 200
+    "accessible": false,
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
+    "accessibilityStatus": 403,
+    "accessibilityError": "HTTP 403"
   },
   {
     "name": "FEMA National Risk Index (NRI)",
@@ -1306,9 +1305,10 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
-    "accessibilityStatus": 200
+    "accessible": false,
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
+    "accessibilityStatus": 403,
+    "accessibilityError": "HTTP 403"
   },
   {
     "name": "FEMA OpenFEMA",
@@ -1324,9 +1324,10 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
-    "accessibilityStatus": 200
+    "accessible": false,
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
+    "accessibilityStatus": 403,
+    "accessibilityError": "HTTP 403"
   },
   {
     "name": "FEMA Open Shelters (NSS)",
@@ -1342,10 +1343,9 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": false,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
-    "accessibilityStatus": 403,
-    "accessibilityError": "HTTP 403"
+    "accessible": true,
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
+    "accessibilityStatus": 200
   },
   {
     "name": "PowerOutage.us (Public Map)",
@@ -1362,7 +1362,7 @@
     "active": true,
     "type": "other",
     "accessible": false,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 403,
     "accessibilityError": "HTTP 403"
   },
@@ -1381,7 +1381,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1399,7 +1399,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1417,7 +1417,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1435,7 +1435,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1452,9 +1452,10 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
-    "accessibilityStatus": 200
+    "accessible": false,
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
+    "accessibilityStatus": 404,
+    "accessibilityError": "HTTP 404"
   },
   {
     "name": "511 SF Bay – Work Zone Data Exchange (WZDx)",
@@ -1470,10 +1471,9 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": false,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
-    "accessibilityStatus": 404,
-    "accessibilityError": "HTTP 404"
+    "accessible": true,
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
+    "accessibilityStatus": 200
   },
   {
     "name": "511NY Developers API",
@@ -1490,7 +1490,7 @@
     "active": true,
     "type": "extreme-weather",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1508,7 +1508,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1526,7 +1526,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1543,9 +1543,10 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
-    "accessibilityStatus": 200
+    "accessible": false,
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
+    "accessibilityStatus": 0,
+    "accessibilityError": "Connection Error"
   },
   {
     "name": "WHO Health Emergency Dashboard",
@@ -1561,10 +1562,9 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": false,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
-    "accessibilityStatus": 0,
-    "accessibilityError": "Connection Error"
+    "accessible": true,
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
+    "accessibilityStatus": 200
   },
   {
     "name": "PAHO/WHO Health Emergencies Dashboards",
@@ -1580,10 +1580,9 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": false,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
-    "accessibilityStatus": 0,
-    "accessibilityError": "Connection Error"
+    "accessible": true,
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
+    "accessibilityStatus": 200
   },
   {
     "name": "CDC/ATSDR Social Vulnerability Index (SVI)",
@@ -1599,9 +1598,10 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
-    "accessibilityStatus": 200
+    "accessible": false,
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
+    "accessibilityStatus": 0,
+    "accessibilityError": "Connection Error"
   },
   {
     "name": "INFORM Risk Index",
@@ -1618,7 +1618,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1636,7 +1636,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1654,7 +1654,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1672,7 +1672,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1690,7 +1690,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1707,9 +1707,10 @@
     "public": true,
     "active": true,
     "type": "extreme-weather",
-    "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
-    "accessibilityStatus": 200
+    "accessible": false,
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
+    "accessibilityStatus": 404,
+    "accessibilityError": "HTTP 404"
   },
   {
     "name": "USGS Landslide Hazard Program – Inventories",
@@ -1726,7 +1727,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1744,7 +1745,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1762,7 +1763,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1780,7 +1781,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1798,7 +1799,7 @@
     "active": true,
     "type": "other",
     "accessible": false,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 0,
     "accessibilityError": "Connection Error"
   },
@@ -1816,10 +1817,9 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": false,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
-    "accessibilityStatus": 0,
-    "accessibilityError": "Connection Error"
+    "accessible": true,
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
+    "accessibilityStatus": 200
   },
   {
     "name": "OpenInfraMap",
@@ -1835,9 +1835,10 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
-    "accessibilityStatus": 200
+    "accessible": false,
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
+    "accessibilityStatus": 0,
+    "accessibilityError": "Connection Error"
   },
   {
     "name": "Global Administrative data – Natural Earth",
@@ -1854,7 +1855,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1872,7 +1873,7 @@
     "active": true,
     "type": "tornado",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1890,7 +1891,7 @@
     "active": true,
     "type": "extreme-weather",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1908,7 +1909,7 @@
     "active": true,
     "type": "other",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1925,9 +1926,10 @@
     "public": true,
     "active": true,
     "type": "other",
-    "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
-    "accessibilityStatus": 200
+    "accessible": false,
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
+    "accessibilityStatus": 403,
+    "accessibilityError": "HTTP 403"
   },
   {
     "name": "Natural Hazards – NASA IMERG (GPM)",
@@ -1943,10 +1945,9 @@
     "public": true,
     "active": true,
     "type": "flood",
-    "accessible": false,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
-    "accessibilityStatus": 403,
-    "accessibilityError": "HTTP 403"
+    "accessible": true,
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
+    "accessibilityStatus": 200
   },
   {
     "name": "NOAA Storm Prediction Center (SPC)",
@@ -1963,7 +1964,7 @@
     "active": true,
     "type": "tornado",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1981,7 +1982,7 @@
     "active": true,
     "type": "tornado",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -1999,7 +2000,7 @@
     "active": true,
     "type": "tornado",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -2017,7 +2018,7 @@
     "active": true,
     "type": "extreme-weather",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -2035,7 +2036,7 @@
     "active": true,
     "type": "extreme-weather",
     "accessible": true,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 200
   },
   {
@@ -2052,10 +2053,9 @@
     "public": true,
     "active": true,
     "type": "wildfire",
-    "accessible": false,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
-    "accessibilityStatus": 404,
-    "accessibilityError": "HTTP 404"
+    "accessible": true,
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
+    "accessibilityStatus": 200
   },
   {
     "name": "PowerOutage.us",
@@ -2072,9 +2072,9 @@
     "active": true,
     "type": "other",
     "accessible": false,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
-    "accessibilityStatus": 0,
-    "accessibilityError": "Timeout"
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
+    "accessibilityStatus": 404,
+    "accessibilityError": "HTTP 404"
   },
   {
     "name": "Esri Disaster Response Program (DRP)",
@@ -2091,7 +2091,7 @@
     "active": true,
     "type": "other",
     "accessible": false,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
     "accessibilityStatus": 0,
     "accessibilityError": "Timeout"
   },
@@ -2110,8 +2110,8 @@
     "active": true,
     "type": "other",
     "accessible": false,
-    "lastChecked": "2026-09-01T06:58:49.664591+00:00",
-    "accessibilityStatus": 404,
-    "accessibilityError": "HTTP 404"
+    "lastChecked": "2026-09-02T06:37:37.182516+00:00",
+    "accessibilityStatus": 0,
+    "accessibilityError": "Timeout"
   }
 ]
