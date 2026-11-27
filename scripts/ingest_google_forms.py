@@ -159,12 +159,14 @@ def main():
 
     # Create lookup maps for existing data
     existing_by_url = {}  # normalized_url -> resource
+    existing_by_url_name = {}  # (normalized_url, name) -> [resources in file order], for rows that share a URL
     existing_urls = set()
     for r in data:
         u = normalize_url(r.get("url",""))
         if u:
             existing_urls.add(u)
             existing_by_url[u] = r
+            existing_by_url_name.setdefault((u, norm(r.get("name",""))), []).append(r)
 
     # Determine data source and fetch rows
     rows = []
@@ -187,7 +189,7 @@ def main():
     if not rows:
         print("No data to process")
         with open(data_out, "w", encoding="utf-8") as f:
-            json.dump(data, f, indent=2)
+            json.dump(data, f, indent=2, ensure_ascii=False)
         return
 
     headers = rows[0]
@@ -278,7 +280,10 @@ def main():
         # Check if this is a new resource or an update
         if url_norm in existing_by_url:
             # Update existing resource
-            existing_res = existing_by_url[url_norm]
+            # Rows that share a URL keep their own status (matched by name, in file order);
+            # fall back to the URL match if the name changed
+            same_name = existing_by_url_name.get((url_norm, res["name"]))
+            existing_res = same_name.pop(0) if same_name else existing_by_url[url_norm]
             # Preserve accessibility data if it exists (fields from check_accessibility.py)
             if "accessible" in existing_res:
                 res["accessible"] = existing_res["accessible"]
@@ -312,7 +317,7 @@ def main():
             print(f"  - row {n}: {', '.join(reasons)} — types_raw={raw_types} name='{res['name']}' url='{res['url']}'")
 
     with open(data_out, "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=2)
+        json.dump(data, f, indent=2, ensure_ascii=False)
 
 if __name__ == "__main__":
     main()
