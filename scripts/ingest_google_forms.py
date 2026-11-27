@@ -44,10 +44,17 @@ def normalize_url(u: str) -> str:
     return urlunsplit((scheme, netloc, path, urlencode(q), ""))
 
 def detect_column(headers, *candidates):
-    for i, h in enumerate(headers):
-        key = re.sub(r'[^a-z0-9]+',' ', h.lower()).strip()
-        for cand in candidates:
-            if key == cand or key.startswith(cand) or cand in key.split():
+    """Find a column by header. An exact header match wins over a partial one, so
+    the result does not depend on column order (e.g. "Data Name" vs "Contributor Name",
+    "Contact" vs "Email Address")."""
+    keys = [re.sub(r'[^a-z0-9]+',' ', h.lower()).strip() for h in headers]
+    for cand in candidates:
+        for i, key in enumerate(keys):
+            if key == cand:
+                return i
+    for cand in candidates:
+        for i, key in enumerate(keys):
+            if key.startswith(cand) or cand in key.split():
                 return i
     return None
 
