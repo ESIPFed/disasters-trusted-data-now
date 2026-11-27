@@ -200,6 +200,21 @@
     "accessibilityStatus": 200
   },
   {
+    "name": "WildfiresLive",
+    "description": "Public global map of satellite-detected thermal anomalies, with NASA FIRMS VIIRS and MODIS detections and filters by geography and time. The site also offers statistics and an educational guide for interpreting detections. Submitted by the WildfiresLive team.",
+    "url": "https://wildfireslive.com/",
+    "organization": "WildfiresLive",
+    "contact": "",
+    "contributorName": "",
+    "contributorEmail": "",
+    "notes": "The public map can be used without an account. Thermal anomalies may include sources other than wildfires, and satellite observations can be delayed. Use as a supplementary resource alongside official incident information.",
+    "subscription": false,
+    "researchOrOps": "",
+    "public": true,
+    "active": true,
+    "type": "wildfire"
+  },
+  {
     "name": "ReliefWeb API",
     "description": "Humanitarian information service with reports, maps, jobs; provides an API for programmatic access.",
     "url": "https://api.reliefweb.int/",
